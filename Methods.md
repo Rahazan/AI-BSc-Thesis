@@ -6,7 +6,7 @@ The experiment is mostly based on the first experiment conducted by Nourbakhsh e
 ##Task description
 The task consisted of 12 arithmetic tasks, with 4 difficulty levels. Three of every difficulty level were completed by the participants, in a random order. 
 
-The task consisted of adding up three numbers, and selecting the right answer from three options. The numbers to add were showed one by one, for three seconds. Before a task starts, a number of stars is shown equal to the difficulty level, for six seconds. The tasks followed eachother without breaks. There was no time limit for selecting the answer, there was no feedback whether the selected answer was correct.
+The task consisted of adding up three numbers, and selecting the right answer from three options. The numbers to add were showed one by one, for four seconds. Before a task starts, a number of stars is shown equal to the difficulty level, for eight seconds. The tasks followed eachother without breaks. There was no time limit for selecting the answer, there was no feedback whether the selected answer was correct.
 
 
 ##Participants
