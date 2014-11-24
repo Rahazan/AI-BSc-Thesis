@@ -1,0 +1,71 @@
+Wed, 29 Oct 2014 18:55:53 GMT Start of experiment
+Wed, 29 Oct 2014 18:55:53 GMT Task difficulties: 
+Wed, 29 Oct 2014 18:55:53 GMT 3
+Wed, 29 Oct 2014 18:55:53 GMT 1
+Wed, 29 Oct 2014 18:55:53 GMT 2
+Wed, 29 Oct 2014 18:55:53 GMT 3
+Wed, 29 Oct 2014 18:55:53 GMT 4
+Wed, 29 Oct 2014 18:55:53 GMT 2
+Wed, 29 Oct 2014 18:55:53 GMT 4
+Wed, 29 Oct 2014 18:55:53 GMT 1
+Wed, 29 Oct 2014 18:56:01 GMT Showing number
+Wed, 29 Oct 2014 18:56:05 GMT Showing number
+Wed, 29 Oct 2014 18:56:09 GMT Showing number
+Wed, 29 Oct 2014 18:56:13 GMT Showing number
+Wed, 29 Oct 2014 18:56:17 GMT Showing number
+Wed, 29 Oct 2014 18:56:17 GMT Showing answers
+Wed, 29 Oct 2014 18:56:25 GMT Answered 236
+Wed, 29 Oct 2014 18:56:25 GMT Wrong, was 222
+Wed, 29 Oct 2014 18:56:33 GMT Showing number
+Wed, 29 Oct 2014 18:56:37 GMT Showing number
+Wed, 29 Oct 2014 18:56:41 GMT Showing number
+Wed, 29 Oct 2014 18:56:45 GMT Showing number
+Wed, 29 Oct 2014 18:56:49 GMT Showing number
+Wed, 29 Oct 2014 18:56:49 GMT Showing answers
+Wed, 29 Oct 2014 18:56:53 GMT Answered 2
+Wed, 29 Oct 2014 18:57:01 GMT Showing number
+Wed, 29 Oct 2014 18:57:05 GMT Showing number
+Wed, 29 Oct 2014 18:57:09 GMT Showing number
+Wed, 29 Oct 2014 18:57:13 GMT Showing number
+Wed, 29 Oct 2014 18:57:17 GMT Showing number
+Wed, 29 Oct 2014 18:57:17 GMT Showing answers
+Wed, 29 Oct 2014 18:57:19 GMT Answered 21
+Wed, 29 Oct 2014 18:57:27 GMT Showing number
+Wed, 29 Oct 2014 18:57:31 GMT Showing number
+Wed, 29 Oct 2014 18:57:35 GMT Showing number
+Wed, 29 Oct 2014 18:57:39 GMT Showing number
+Wed, 29 Oct 2014 18:57:43 GMT Showing number
+Wed, 29 Oct 2014 18:57:43 GMT Showing answers
+Wed, 29 Oct 2014 18:57:46 GMT Answered 203
+Wed, 29 Oct 2014 18:57:54 GMT Showing number
+Wed, 29 Oct 2014 18:57:58 GMT Showing number
+Wed, 29 Oct 2014 18:58:02 GMT Showing number
+Wed, 29 Oct 2014 18:58:06 GMT Showing number
+Wed, 29 Oct 2014 18:58:10 GMT Showing number
+Wed, 29 Oct 2014 18:58:10 GMT Showing answers
+Wed, 29 Oct 2014 18:58:14 GMT Answered 1866
+Wed, 29 Oct 2014 18:58:14 GMT Wrong, was 1832
+Wed, 29 Oct 2014 18:58:22 GMT Showing number
+Wed, 29 Oct 2014 18:58:26 GMT Showing number
+Wed, 29 Oct 2014 18:58:30 GMT Showing number
+Wed, 29 Oct 2014 18:58:34 GMT Showing number
+Wed, 29 Oct 2014 18:58:38 GMT Showing number
+Wed, 29 Oct 2014 18:58:38 GMT Showing answers
+Wed, 29 Oct 2014 18:58:40 GMT Answered 22
+Wed, 29 Oct 2014 18:58:48 GMT Showing number
+Wed, 29 Oct 2014 18:58:52 GMT Showing number
+Wed, 29 Oct 2014 18:58:56 GMT Showing number
+Wed, 29 Oct 2014 18:59:00 GMT Showing number
+Wed, 29 Oct 2014 18:59:04 GMT Showing number
+Wed, 29 Oct 2014 18:59:04 GMT Showing answers
+Wed, 29 Oct 2014 18:59:09 GMT Answered 1659
+Wed, 29 Oct 2014 18:59:09 GMT Wrong, was 1708
+Wed, 29 Oct 2014 18:59:17 GMT Showing number
+Wed, 29 Oct 2014 18:59:21 GMT Showing number
+Wed, 29 Oct 2014 18:59:25 GMT Showing number
+Wed, 29 Oct 2014 18:59:29 GMT Showing number
+Wed, 29 Oct 2014 18:59:33 GMT Showing number
+Wed, 29 Oct 2014 18:59:33 GMT Showing answers
+Wed, 29 Oct 2014 18:59:34 GMT Answered 2
+Wed, 29 Oct 2014 18:59:34 GMT Finished
+Wed, 29 Oct 2014 18:59:34 GMT Wrong answers: 3
