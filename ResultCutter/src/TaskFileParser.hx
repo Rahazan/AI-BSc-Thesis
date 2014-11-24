@@ -67,7 +67,7 @@ class TaskFileParser
 		}
 		task.endTime = getTime(line);
 		
-		tasks.push(task);
+		tasks.add(task);
 		trace("Parsed task: " + task);
 		
 		//Parse the rest of the file

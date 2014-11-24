@@ -22,16 +22,21 @@ class MeasurementCutter
 		this.tasks = tasks;
 	}
 	
+	
 	public function cut(file: String)
 	{
 		var fin = File.read(file);
 		var prevTime: Float = 0;
 		
+		for (ctask in tasks) {
+			var fileName = ctask.subject + ctask.difficulty;
+			removeOld(fileName);
+		}
+		
 		trace("Cutting measurement file");
 		trace("-----------------------");
 		for (ctask in tasks) 
 		{
-			
 			var fileName = ctask.subject + ctask.difficulty;
 			trace('Now processing $fileName');
 			
@@ -45,6 +50,7 @@ class MeasurementCutter
 			}
 			else {
 				trace(ctask.startTime);
+				trace(ctask.endTime);
 				trace(prevTime);
 				
 				var amount: Int = Std.int ( ((ctask.startTime - prevTime) / 1000) * sampleRate );
@@ -62,9 +68,26 @@ class MeasurementCutter
 		
 	}
 	
+	private function removeOld(fileName: String) {
+		if (FileSystem.exists(fileName))
+			FileSystem.deleteFile(fileName);
+			
+		if (FileSystem.exists(fileName+'b'))
+			FileSystem.deleteFile(fileName + 'b');
+	}
+	
 	private function writeToFile(fileName: String, lines: List<String>) 
 	{
+		if (FileSystem.exists(fileName))
+			fileName += 'b';
+			
+			
+		var content: String = "";
 		
+		for (line in lines) {
+			content+= line + "\n";
+		}
+		File.saveContent(fileName, content);
 	}
 	
 	private function takeNLines(n: Int, fin: FileInput): List<String>
