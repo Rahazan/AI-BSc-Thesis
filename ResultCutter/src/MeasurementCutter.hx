@@ -28,6 +28,9 @@ class MeasurementCutter
 		var fin = File.read(file);
 		var prevTime: Float = 0;
 		
+		if (!FileSystem.exists('out'))
+			FileSystem.createDirectory('out');
+			
 		for (ctask in tasks) {
 			var fileName = ctask.subject + ctask.difficulty;
 			removeOld(fileName);
@@ -37,7 +40,7 @@ class MeasurementCutter
 		trace("-----------------------");
 		for (ctask in tasks) 
 		{
-			var fileName = ctask.subject + ctask.difficulty;
+			var fileName = 'out/' + ctask.subject + ctask.difficulty;
 			trace('Now processing $fileName');
 			
 			
@@ -69,11 +72,11 @@ class MeasurementCutter
 	}
 	
 	private function removeOld(fileName: String) {
-		if (FileSystem.exists(fileName))
-			FileSystem.deleteFile(fileName);
+		if (FileSystem.exists('out/' + fileName))
+			FileSystem.deleteFile('out/' +fileName);
 			
-		if (FileSystem.exists(fileName+'b'))
-			FileSystem.deleteFile(fileName + 'b');
+		if (FileSystem.exists('out/' +fileName+'b'))
+			FileSystem.deleteFile('out/' +fileName + 'b');
 	}
 	
 	private function writeToFile(fileName: String, lines: List<String>) 
