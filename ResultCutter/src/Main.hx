@@ -22,7 +22,7 @@ class Main
 		
 		var r = new TaskFileParser(args[2]);
 		var tasks = r.parsaeFile();
-		
+		trace("Measurement start in mills " + Date.fromString(args[0]).getTime());
 		var cutter = new MeasurementCutter(Date.fromString(args[0]).getTime(), Std.parseInt(args[1]), tasks);
 		cutter.cut(args[3]);
 	}
