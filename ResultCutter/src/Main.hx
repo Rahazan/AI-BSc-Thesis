@@ -12,11 +12,19 @@ class Main
 	
 	static function main() 
 	{
-		var r = new TaskFileParser('vera.txt');
-		var tasks = r.cut();
+		var args = Sys.args();
+		if (args.length != 4 ) {
+			trace ("Not enough arguments,\n 1st arg: time of measurement start (eg \"12:45:00\"),\n 2nd arg samples per second,\n 3rd argument task filepath,\n 4th argument measurement filepath");
+			Sys.exit(1);
+		}
 		
-		var cutter = new MeasurementCutter(Date.fromString('19:55:52').getTime(), 1000, tasks);
-		cutter.cut('verabio.txt');
+		
+		
+		var r = new TaskFileParser(args[2]);
+		var tasks = r.parsaeFile();
+		
+		var cutter = new MeasurementCutter(Date.fromString(args[1]).getTime(), Std.parseInt(args[2]), tasks);
+		cutter.cut(args[4]);
 	}
 	
 }

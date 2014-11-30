@@ -25,7 +25,7 @@ class TaskFileParser
 		subjectName = taskFile.split('.')[0];
 	}
 	
-	public function cut(): List<Task> {
+	public function parsaeFile(): List<Task> {
 		
 		var fin = File.read(taskFile);
 		try {
