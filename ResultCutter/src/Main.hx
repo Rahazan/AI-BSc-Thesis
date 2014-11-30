@@ -23,8 +23,8 @@ class Main
 		var r = new TaskFileParser(args[2]);
 		var tasks = r.parsaeFile();
 		
-		var cutter = new MeasurementCutter(Date.fromString(args[1]).getTime(), Std.parseInt(args[2]), tasks);
-		cutter.cut(args[4]);
+		var cutter = new MeasurementCutter(Date.fromString(args[0]).getTime(), Std.parseInt(args[1]), tasks);
+		cutter.cut(args[3]);
 	}
 	
 }
