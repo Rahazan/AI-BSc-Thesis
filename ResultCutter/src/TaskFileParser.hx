@@ -21,7 +21,7 @@ class TaskFileParser
 		this.taskFile = taskFile;
 		this.taskDifficulties = new List<Int>();
 		this.tasks = new List<Task>();
-		var s = taskFile.split('/');
+		var s = taskFile.split('\\');
 		subjectName = s[s.length-1].split('.')[0];
 	}
 	
