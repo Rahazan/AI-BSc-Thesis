@@ -1,7 +1,17 @@
-neko ../ResultCutter/bin/ResultCutter.n 14:14:38 1000 D:\Dropbox\bsc\Task\jasper.txt jasperdat.txt
-neko ../ResultCutter/bin/ResultCutter.n 20:57:36 1000 D:\Dropbox\bsc\Task\luc.txt lucdat.txt
-neko ../ResultCutter/bin/ResultCutter.n 18:52:22 1000 D:\Dropbox\bsc\Task\robbert.txt robbertdat.txt
-neko ../ResultCutter/bin/ResultCutter.n 01:18:04 1000 D:\Dropbox\bsc\Task\steven.txt stevendat.txt
-neko ../ResultCutter/bin/ResultCutter.n 19:14:42 1000 D:\Dropbox\bsc\Task\joris.txt jorisdat.txt
-neko ../ResultCutter/bin/ResultCutter.n 18:55:52 1000 D:\Dropbox\bsc\Task\vera.txt veradat.txt
+matlab -r cleanTask('jasperdat.txt');exit -nosplash -nodesktop -nofigures
+matlab -r cleanTask('lucdat.txt');exit -nosplash -nodesktop -nofigures
+matlab -r cleanTask('robbertdat.txt');exit -nosplash -nodesktop -nofigures
+matlab -r cleanTask('stevendat.txt');exit -nosplash -nodesktop -nofigures
+matlab -r cleanTask('jorisdat.txt');exit -nosplash -nodesktop -nofigures
+matlab -r cleanTask('veradat.txt');exit -nosplash -nodesktop -nofigures
+
+
+pause
+
+neko ../ResultCutter/bin/ResultCutter.n 14:14:38 100 D:\Dropbox\bsc\Task\jasper.txt jasperdatc.txt
+neko ../ResultCutter/bin/ResultCutter.n 20:57:36 100 D:\Dropbox\bsc\Task\luc.txt lucdatc.txt
+neko ../ResultCutter/bin/ResultCutter.n 18:52:22 100 D:\Dropbox\bsc\Task\robbert.txt robbertdatc.txt
+neko ../ResultCutter/bin/ResultCutter.n 01:18:04 100 D:\Dropbox\bsc\Task\steven.txt stevendatc.txt
+neko ../ResultCutter/bin/ResultCutter.n 19:14:42 100 D:\Dropbox\bsc\Task\joris.txt jorisdatc.txt
+neko ../ResultCutter/bin/ResultCutter.n 18:55:52 100 D:\Dropbox\bsc\Task\vera.txt veradatc.txt
 Pause
