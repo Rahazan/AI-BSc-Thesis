@@ -25,8 +25,8 @@ function values = extractfeatures(subjects)
             normalized{j} = sgolayfilt(normalized{j}, 5, 251);
         end
         
-		plot(normalized{6})
-        plot(pwelch(normalized{6}));
+		plot(normalized{2})
+        %plot(pwelch(normalized{6}));
 		
 		for diff = 1:4
             % NOT DRY!

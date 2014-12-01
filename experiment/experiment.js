@@ -2,14 +2,14 @@ var tasks = [
     {
       difficulty:1,
       answers:[3, 1, 2],
-      sumparts:[1,0,1,1],
-      correct:3
+      sumparts:[1,0,1,0],
+      correct:2
     },
     {
       difficulty:1,
-      answers:[4, 3, 1],
-      sumparts:[1,0,1,1],
-      correct:3
+      answers:[4, 3, 2],
+      sumparts:[1,0,1,0],
+      correct:2
     },
     {
       difficulty:2,
