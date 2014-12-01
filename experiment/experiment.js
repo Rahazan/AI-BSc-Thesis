@@ -1,49 +1,4 @@
-<head>
-
-  <style>
-
-  html, body {
-    margin: 0;
-    height: 100%;
-    background-color: black;
-    color: white;
-  }
-
-  #content {
-    width: 420px;
-    display:block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-  }
-
-  p{
-    font-size: 5em;
-      text-align center;
-      vertical-align: middle;
-      border: dashed 1px #111;
-  }
-
-  a{
-    color:green;
-  }
-
-  </style>
-  <script src="seedrandom.min.js"></script>
-</head>
-<body>
-  <div id="content">
-      <p>Start of experiment</p>
-  </div>
-
-
-  <script>
-    var tasks = [
+var tasks = [
     {
       difficulty:1,
       answers:[3, 1, 2],
@@ -231,7 +186,3 @@
 
       return array;
     }
-  </script>
-
-
-</body>
