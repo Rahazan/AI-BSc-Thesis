@@ -1,0 +1,1 @@
+matlab -r "r = extractfeatures({'luc', 'joris', 'robbert', 'steven', 'jasper', 'vera'});exit" -nosplash -nodesktop -noFigureWindows

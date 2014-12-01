@@ -18,4 +18,4 @@ neko ../ResultCutter/bin/ResultCutter.n 18:55:52 100 D:\Dropbox\bsc\Task\vera.tx
 
 pause
 cd out
-matlab -r "r = extractfeatures({'luc', 'joris', 'robbert', 'steven', 'jasper', 'vera'});exit" -nosplash -nodesktop -noFigureWindows
+../processtocsv.bat

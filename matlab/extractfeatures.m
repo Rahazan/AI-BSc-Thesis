@@ -26,7 +26,7 @@ function values = extractfeatures(subjects)
         end
         
 		plot(normalized{6})
-        
+        plot(pwelch(normalized{6}));
 		
 		for diff = 1:4
             % NOT DRY!
@@ -35,7 +35,7 @@ function values = extractfeatures(subjects)
             
 			index = 2*diff-1;
 			subjresult{index, 1} = char(subject); %Subject name
-			subjresult{index, 2} = diff; %Difficulty
+			subjresult{index, 2} = strcat('diff', num2str(diff)); %Difficulty
 			acc = sum(normalized{index});
             avg = acc / length(normalized{index});
             
@@ -48,7 +48,7 @@ function values = extractfeatures(subjects)
             
 			index = 2*diff;
 			subjresult{index, 1} = char(subject);
-			subjresult{index, 2} = diff; %Difficulty
+			subjresult{index, 2} = strcat('diff', num2str(diff)); %Difficulty
             acc = sum(normalized{index, :});
             avg = acc / length(normalized{index, :});
             
