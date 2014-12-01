@@ -16,7 +16,8 @@ function [f] = cleanTask(dataPath)
     
     dat = (sgolayfilt(vAvgResamp,3,11));
     
-    normdat = mat2gray(dat);
+    %normdat = mat2gray(dat);
+    normdat = dat
     plot(normdat);
     
     p = strsplit(dataPath, '\\');
