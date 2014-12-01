@@ -1,3 +1,5 @@
+@echo off
+
 matlab -r cleanTask('jasperdat.txt');exit -nosplash -nodesktop -noFigureWindows
 matlab -r cleanTask('lucdat.txt');exit -nosplash -nodesktop -noFigureWindows
 matlab -r cleanTask('robbertdat.txt');exit -nosplash -nodesktop -noFigureWindows
@@ -5,7 +7,7 @@ matlab -r cleanTask('stevendat.txt');exit -nosplash -nodesktop -noFigureWindows
 matlab -r cleanTask('jorisdat.txt');exit -nosplash -nodesktop -noFigureWindows
 matlab -r cleanTask('veradat.txt');exit -nosplash -nodesktop -noFigureWindows
 
-echo ===\nWait for matlab to finish\n===
+echo ===Wait for matlab to finish===
 pause
 
 
@@ -18,4 +20,6 @@ neko ../ResultCutter/bin/ResultCutter.n 18:55:52 100 D:\Dropbox\bsc\Task\vera.tx
 
 pause
 cd out
+
 ../processtocsv.bat
+
