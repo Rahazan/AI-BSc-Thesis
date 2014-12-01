@@ -1,9 +1,9 @@
-matlab -r cleanTask('jasperdat.txt');exit -nosplash -nodesktop -nofigures
-matlab -r cleanTask('lucdat.txt');exit -nosplash -nodesktop -nofigures
-matlab -r cleanTask('robbertdat.txt');exit -nosplash -nodesktop -nofigures
-matlab -r cleanTask('stevendat.txt');exit -nosplash -nodesktop -nofigures
-matlab -r cleanTask('jorisdat.txt');exit -nosplash -nodesktop -nofigures
-matlab -r cleanTask('veradat.txt');exit -nosplash -nodesktop -nofigures
+matlab -r cleanTask('jasperdat.txt');exit -nosplash -nodesktop -noFigureWindows
+matlab -r cleanTask('lucdat.txt');exit -nosplash -nodesktop -noFigureWindows
+matlab -r cleanTask('robbertdat.txt');exit -nosplash -nodesktop -noFigureWindows
+matlab -r cleanTask('stevendat.txt');exit -nosplash -nodesktop -noFigureWindows
+matlab -r cleanTask('jorisdat.txt');exit -nosplash -nodesktop -noFigureWindows
+matlab -r cleanTask('veradat.txt');exit -nosplash -nodesktop -noFigureWindows
 
 
 pause
