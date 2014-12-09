@@ -1,5 +1,6 @@
 @echo off
 
+
 matlab -r cleanTask('jasperdat.txt');exit -nosplash -nodesktop -noFigureWindows
 matlab -r cleanTask('lucdat.txt');exit -nosplash -nodesktop -noFigureWindows
 matlab -r cleanTask('robbertdat.txt');exit -nosplash -nodesktop -noFigureWindows
@@ -19,7 +20,6 @@ neko ../ResultCutter/bin/ResultCutter.n 19:14:42 100 D:\Dropbox\bsc\Task\joris.t
 neko ../ResultCutter/bin/ResultCutter.n 18:55:52 100 D:\Dropbox\bsc\Task\vera.txt veradatc.txt
 
 pause
-cd out
 
-../processtocsv.bat
+processtocsv.bat
 
