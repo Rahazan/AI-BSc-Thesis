@@ -61,6 +61,8 @@ This sensor is embedded in a wrist band, it uses a dry electrode. The sensor sid
 \subsubsection{BIOPAC MP30}
 The BIOPAC MP30 was used in conjunction with finger GSR sensors. This sensor wraps around two fingers, in this experiment the index and ring finger. It uses gel electrodes, Grass EC33 Electrode Paste was used.
 
+The sampling rate was set to 1000 samples per second.
+
 \subsubsection{Task}
 
 \subsubsection{Experimental design}
@@ -74,7 +76,23 @@ The participants were first explained the task and seated in front of the laptop
 
 \subsection{Analysis}
 \subsubsection{Preprocessing}
+The collected data contained a DC current, which was smoothed by filtering and resampling to 100 samples per second using Savitzky-Golay filtering. 
+The data per subject was then cut into seperate frames, the tasks. The data was then normalized per subject over all datapoints in all tasks, so that all datapoints lie between 0 and 1 to compensate for subjective differences.
+
+These tasks were then smoothed one last time, to get rid of a small remaining amount of DC noise. This was again done using a Savitzky-Golay filter.
+
 \subsubsection{Transformation}
+From the measurements from every task features were extracted. 
+
+The extracted time domain features:
+
+- Average over all points in the task.
+- Accumulative of all points in the task.
+- Standard deviation of all points in the task.
+- Difference between first and last point of the task.
+- Peaks
+
+
 \subsubsection{Data mining}
 \subsubsection{Interpretation}
 
