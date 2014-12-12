@@ -18,7 +18,8 @@ function values = extractfeatures(subjects)
 			num = num + 1;
         end
         
-		normalized = normalizedGSR(files);
+		%normalized = normalizedGSR(files);
+        normalized = normalizedGSRByAvg(files);
        
         
         %Smoothen out DC current (almost) fully
@@ -146,5 +147,19 @@ function norm = normalizedGSR(files)
     
 end
 
+
+function norm = normalizedGSRByAvg(files)
+    norm = cell(length(files), 1);
+    s = 0;
+        for i = (1:length(files))
+        data = importdata(char(files{i}));
+        s = s + sum(data);
+    end
+    for i = (1:length(files))
+        data = importdata(char(files{i}));
+        mean = s/length(data);
+        norm{i} = data/mean;
+    end
+end
 
 
