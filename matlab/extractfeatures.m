@@ -20,7 +20,7 @@ function values = extractfeatures(subjects)
         
 		%normalized = normalizedGSR(files);
         normalized = normalizedGSRByAvg(files);
-       
+        
         
         %Smoothen out DC current (almost) fully
         for j = 1:8
@@ -33,8 +33,17 @@ function values = extractfeatures(subjects)
         
 		%plot(normalized{2})
         
-        sel = (max(normalized{2})-min(normalized{2}))/32;
-        peakfinder(normalized{2}, sel);
+        figure;
+        plot(normalized{3}, 'LineWidth', 2);
+
+        xlabel('Time (s/100)')
+        ylabel('Conductance (microSiemens)')
+        title('Filtered task data for subject task 3')
+        
+        
+        
+        sel = (max(normalized{2})-min(normalized{2}))/100;
+        %peakfinder(normalized{2}, sel);
         a = peakfinder(normalized{2}, sel);
         length(a);
         
@@ -111,7 +120,7 @@ function subjresult = addFeatures(subject, subjresult, index, diff, normalized)
 end
 
 
-function norm = normalizedGSR(files) 
+function norm = normalizedGSR(files) %Normalized from 0 to 1
     norm = cell(length(files), 1);
     
     minV = 0;
@@ -148,7 +157,7 @@ function norm = normalizedGSR(files)
 end
 
 
-function norm = normalizedGSRByAvg(files)
+function norm = normalizedGSRByAvg(files) %Normalized by dividing by subject average
     norm = cell(length(files), 1);
     s = 0;
         for i = (1:length(files))

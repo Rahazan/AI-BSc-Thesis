@@ -3,8 +3,14 @@ function [f] = cleanTask(dataPath)
     
     data = importdata(dataPath);
     
-    
+    %Plotting
+    %figure
+    %plot(data);
 
+    %xlabel('Time (ms)')
+    %ylabel('Conductance (microSiemens)')
+    %title('Raw data from whole task')
+    
     fs = 1000;
     fsResamp = 100;
     
@@ -12,13 +18,13 @@ function [f] = cleanTask(dataPath)
     vResamp = resample(data, fsResamp, fs);
     tResamp = (0:numel(vResamp)-1) / fsResamp;
     vAvgResamp = sgolayfilt(vResamp,1,11);
-    plot(tResamp,vAvgResamp);
+    %plot(tResamp,vAvgResamp);
     
     dat = (sgolayfilt(vAvgResamp,3,11));
     
     %normdat = mat2gray(dat);
-    normdat = dat
-    plot(normdat);
+    normdat = dat;
+    %plot(normdat);
     
     p = strsplit(dataPath, '\\');
     
@@ -30,11 +36,16 @@ function [f] = cleanTask(dataPath)
     
     dlmwrite(filename, normdat);
     
-    %fileID = fopen(filename);
-    %fwrite(fileID, normdat);
-    %dlmcell(filename, normdat);
-    
+
     f = normdat;
+    
+    figure
+    plot(f);
+
+    xlabel('Time (ms)')
+    ylabel('Conductance (microSiemens)')
+    title('Filtered data from whole task')
+    
 end
 
 
