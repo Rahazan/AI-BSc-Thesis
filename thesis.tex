@@ -4,11 +4,11 @@
 
 \title{Title}
 \author{Guido Zuidhof\\
-  \small{ todo }\\
+  \small{ Supervisors:  }\\
   \small{Radboud Universiteit Nijmegen}\\
   \small{\texttt{guido.zuidhof@student.ru.nl}}
 }
-\date{November 18, 2014}
+\date{\today}
 
 \begin{document}
 
@@ -38,6 +38,8 @@ How this cognitive load could be determined, i.e. by measurement.
 \subsubsection{Measurement of physiological response}
 Measuring heart rate, breathing, eeg, gsr, etc.
 
+With an increasing variety in consumer 
+
 \subsubsection{Classification}
 How sense can be made from this data
 
@@ -50,13 +52,17 @@ Using features extracted from GSR data to determine cognitive load, data gathere
 \section{Methods}
 
 \subsection{Experiment}
-The experiment is mostly based on the first experiment conducted by Nourbakhsh et al., \_meer uitleg todo\_
+The experiment is mostly based on the arithmetic task experiment conducted by Nourbakhsh et al., \_meer uitleg todo\_
 \subsubsection{Apparatus}
 The task was displayed in a 15.6" laptop screen, input was given using a standard computer mouse.
-Two galvanic skin response sensors were used in this experiment. The participants wore both at the same time on the left arm. Both were set to a sampling frequency of 12Hz. 
+Two galvanic skin response sensors were used in this experiment. The participants wore both at the same time on the left arm.
+
+\subsubsection{Participants}
+Six participants took part in this experiment, five male and one female. Their ages ranged between 21 and 25 at the time of the experiment. They were not compensated.
+
 
 \subsubsection{Affectiva Q Sensor}
-This sensor is embedded in a wrist band, it uses a dry electrode. The sensor side of the wrist was placed on the bottom of the wrist.
+This sensor is embedded in a wrist band, it uses a dry electrode. The sensor side of the wrist was placed on the bottom of the wrist. The sampling rate of this sensor was set to 8 samples per second.
 
 \subsubsection{BIOPAC MP30}
 The BIOPAC MP30 was used in conjunction with finger GSR sensors. This sensor wraps around two fingers, in this experiment the index and ring finger. It uses gel electrodes, Grass EC33 Electrode Paste was used.
@@ -75,9 +81,20 @@ The task consisted of adding up three numbers, and selecting the right answer fr
 The participants were first explained the task and seated in front of the laptop. Then the sensors were applied to the left hand and wrist. The participant is then instructed to place the left hand on the table in front of them and not to move it, in order to prevent movement or motion artifacts.
 
 \subsection{Analysis}
+
+\subsubsection{Affectiva Q Sensor Data}
+The data gathered from the Affectiva Q Sensor proved unusable. In most participants no proper contact seemed to have been made with the skin during the full experiment. Dry GSR sensors need some sweat to ensure a good connection with both electrodes. Given the short experiment duration (a few of minutes) this connection was likely never made.
+
+In hindsight the participants could have worn the device longer before the first task start, or they could have been asked to perform some light exercise. 
+
+Any data discussed from here on is solely that collected using the BIOPAC MP30 and it's finger electrodes.
+
+
 \subsubsection{Preprocessing}
 The collected data contained a DC current, which was smoothed by filtering and resampling to 100 samples per second using Savitzky-Golay filtering. 
-The data per subject was then cut into seperate frames, the tasks. The data was then normalized per subject over all datapoints in all tasks, so that all datapoints lie between 0 and 1 to compensate for subjective differences.
+The data per subject was then cut into seperate frames, the tasks. 
+
+The data was then normalized per subject over all datapoints in all tasks. This was done by dividing every data point of the subject by the average of the subject over all tasks. The reason for this division instead of ordinary normalization where all points are put between 0 and 1, is so that outliers can't totally influence all datapoints.
 
 These tasks were then smoothed one last time, to get rid of a small remaining amount of DC noise. This was again done using a Savitzky-Golay filter.
 
@@ -97,12 +114,27 @@ The extracted time domain features:
 \subsubsection{Interpretation}
 
 \section{Results}
+
 \subsection{..?}
 \subsection{..?}
 
 \section{Discussion}
 \subsection{Viability}
+The results show that from the results 
+
+Unfortunately I can not make any conclusions regarding 
+
+\subsubsection{Task bleeding}
+Another explanation may be the bleeding of tasks into other tasks. If for instance a subject first gets two hard tasks, and then an easy one, it is imaginable that the subject´s GSR value for that easy task is higher than it would have been without first having done harder tasks. 
+
+This is mitigated by the random order in which the tasks are presented and the time between tasks, however with the relatively small subject pool it is not unimaginable this has had it´s effect on the classification accuracy.
+
+
+
+
 \subsection{Future research}
+Future research could include investigating how viable this method is given more portable (consumer) sensors in a real life setting. 
+
 \section{Conclusion}
 
 
@@ -110,6 +142,6 @@ The extracted time domain features:
 
 
 % -- Bibliography (APA style)
-\bibliography{references}
+\bibliography{ref}
 
 \end{document}
