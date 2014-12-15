@@ -1,4 +1,8 @@
 *.gz
 *.log
 *.aux
+*.bbl
+*.dvi
+*.blg
+
 out
