@@ -4,5 +4,6 @@
 *.bbl
 *.dvi
 *.blg
+Thumbs.db
 
 out
