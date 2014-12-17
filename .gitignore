@@ -4,6 +4,8 @@
 *.bbl
 *.dvi
 *.blg
+*.bcf
+*.run.xml
 Thumbs.db
 
 out

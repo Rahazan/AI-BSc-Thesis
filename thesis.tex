@@ -1,6 +1,11 @@
 \documentclass[12pt,fleqn,leqno,letterpaper]{article}
-\setcounter{secnumdepth}{5}
-\include{preamble}
+\setlength{\parindent}{20pt}
+\setlength{\parskip}{0.45cm plus8mm minus4mm}
+
+
+\usepackage{cite}
+
+
 
 \title{Title}
 \author{Guido Zuidhof\\
@@ -66,9 +71,9 @@ Using features extracted from GSR data to determine cognitive load, data gathere
 \subsection{State of the art}
 Galvanic skin response readings have been studied in regard to cognitive load.
 
-Yu et al. \cite{Yu2007} investigated the possibility of using GSR as an index of cognitive load during the use of unimodal and multimodal versions of the same interface. It has been shown that multimodal interfaces \"support the user in managing cognitive load\" \cite{Oviatt2004}, and thus multimodal interfaces have a lower corresponding cognitive load. 
+Shi et al. \cite{Shi2007} investigated the possibility of using GSR as an index of cognitive load during the use of unimodal and multimodal versions of the same interface. It has been shown that multimodal interfaces "support the user in managing cognitive load" \cite{Oviatt2004}, and thus multimodal interfaces have a lower corresponding cognitive load. 
 
-Yu et al. found that GSR values increase when cognitive load levels increase across all subjects, and conclude that GSR can be used to \"serve as an objective indicator of [a] user's cognitive load\".
+Shi et al. found that GSR values increase when cognitive load levels increase across all subjects, and conclude that GSR can be used to "serve as an objective indicator of [a] user's cognitive load".
 
 
 
@@ -127,24 +132,38 @@ The data per subject was then cut into seperate frames, the tasks.
 
 The data was then normalized per subject over all datapoints in all tasks. This was done by dividing every data point of the subject by the average of the subject over all tasks. The reason for this division instead of ordinary normalization where all points are put between 0 and 1, is so that outliers can't totally influence all datapoints.
 
-\\
+This average was calculated as follows:
 
-AvgTaskGSR(s,q) = \frac {1}{\left \| T_q \right \|}    \sum_{t=1}^{T_q} NormGSR(s,q,t) 
-\\
 
-NormGSR(s,q,t) = \frac {{GSR(s,q,t)}} {AverageGSR(s)}
-\\
+\[
+AverageGSR(s) = \frac 
+{\sum_{q \in Q_s}\sum_{t \in T_q} GSR(s,q,t)}
+{ \sum_{q \in Q_s} \left\vert{T_q}\right\vert }
+\]
 
-AverageTaskGSR(s,q) = \frac { \sum_{t=1}^{T_q} NormGSR(s,q,t) }
-{\left \| T_q \right \| }
+With $s$ a given subject, $Q_s$ a set of all tasks performed by $s$, and $T_q$ the set of all measurements in task $q$.
 
-\\
-StdDevTaskGSR(s,q) = \sqrt {\frac{1}{\left \| T_q \right \|}   \sum_{t=1}^{T_q} (NormGSR(s,q,t) - AvgTaskGSR(s,q))^2 }
+The normalised GSR is then given by
 
-\\
-\\
+\[
+NormGSR(s,q,t) = \frac{GSR(s,q,t)}{AverageGSR(s)}
+\]
 
-DiffTaskGSR(s,q) = NormGSR(s,q, t_1) - NormGSR(s,q, t_{\left \| T_q \right \|})
+
+
+
+\[
+AvgTaskGSR(s,q) = \frac { \sum_{t \in T_q} NormGSR(s,q,t) }
+{\left\vert{T_q}\right\vert }
+\]
+
+\[
+StdDevTaskGSR(s,q) = \sqrt {\frac{1}{\left\vert{T_q}\right\vert}   \sum_{t \in T_q} (NormGSR(s,q,t) - AvgTaskGSR(s,q))^2 }
+\]
+
+\[
+DiffTaskGSR(s,q) = NormGSR(s,q, t_0) - NormGSR(s,q, t_{\left\vert{T_q}\right\vert})
+\]
 
 This normalised GSR 
 
@@ -162,9 +181,9 @@ The extracted time domain features:
 - Difference between first and last point of the task.
 - Peaks
 
-\subsubsubsection{Average}
+\paragraph{Average}
 
-\subsubsubsection{Accumulative}
+\paragraph{Accumulative}
 
 
 
@@ -200,7 +219,8 @@ Future research could include investigating how viable this method is given more
 
 
 
-% -- Bibliography (APA style)
-\bibliography{ref}
+% -- Bibliography
+\bibliography{ref}{}
+\bibliographystyle{plain}
 
 \end{document}
