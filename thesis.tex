@@ -130,9 +130,9 @@ Any data discussed from here on is solely that collected using the BIOPAC MP30 a
 The collected data contained a DC current, which was smoothed by filtering and resampling to 100 samples per second using Savitzky-Golay filtering. 
 The data per subject was then cut into seperate frames, the tasks. 
 
-The data was then normalized per subject over all datapoints in all tasks. This was done by dividing every data point of the subject by the average of the subject over all tasks. The reason for this division instead of ordinary normalization where all points are put between 0 and 1, is so that outliers can't totally influence all datapoints.
+The data was then normalized per subject over all datapoints in all tasks. This was done by dividing every data point of the subject by the average of the subject over all tasks. 
 
-This average was calculated as follows:
+Let the average over all tasks:
 
 
 \[
@@ -143,11 +143,15 @@ AverageGSR(s) = \frac
 
 With $s$ a given subject, $Q_s$ a set of all tasks performed by $s$, and $T_q$ the set of all measurements in task $q$.
 
-The normalised GSR is then given by
+The normalised GSR is then given by:
 
 \[
 NormGSR(s,q,t) = \frac{GSR(s,q,t)}{AverageGSR(s)}
 \]
+
+Note that the normalization is done by dividing by the average of the subject over all tasks, and not by simply transforming all measurements to be between 0 and 1. What (original) GSR value would become 1 and 0 would then be quite arbitrary per subject, and not all subjects would be on the same scale, as outliers can totally influence this range.
+
+
 
 
 
