@@ -1,9 +1,12 @@
 \documentclass[12pt,fleqn,leqno,letterpaper]{article}
-\setlength{\parindent}{20pt}
-\setlength{\parskip}{0.45cm plus8mm minus4mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.60cm plus8mm minus4mm}
 
 
-\usepackage{cite}
+%\usepackage{cite}
+\usepackage{natbib}
+\usepackage{hyperref}
+\bibliographystyle{plainnat}
 
 
 
@@ -33,12 +36,36 @@
 
 \section{Introduction}
 \subsection{Cognitive load}
+Cognitive load theory \citep{Sweller1994} revolves around the idea that (short-term) working memory is limited, whereas long-term memory is unlimited. 
+
+It is built upon schema theory, in which expertise in an area is a function of the acquisition of particular schema.
+A schema is a mental structure to organise knowledge.
+
+When processing information, we use working memory. A schema is one element in this working memory, no matter how large it is \citep{mayer2014cambridge}. 
+
+Cognitive load theory is nearly always studied in the context of learning new schema. The idea is that there are ways to reduce cognitive load by utilising long-term memory, and thus having more space in working memory, which would allow for more efficient learning.
+
+Cognitive load theory distinguishes three types of cognitive load, which according to research can each be reduced in specific ways \citep{mayer2002multimedia}:
+
+
+\paragraph{Extraneous cognitive load}
+This cognitive load is influenced by how the material or task is presented. It can be reduced by using worked-out examples, using diagrams, or presenting the material in multiple modalities \citep{mousavi1995reducing}.
+
+\paragraph{Intrinsic cognitive load}
+This cognitive load is determined by the complexity of the material at hand. It can be reduced by splitting up the task or building upon former (informal) knowledge.
+
+\paragraph{Germane cognitive load}
+Germane cognitive load is the cognitive load associated with the process of building, acquiring and automating new schemas. The greater the space for this load (by reducing the intrinsic and extraneous cognitive load), the greater the ease of learning.
+
+
+
+
+\subsection{Determining cognitive load}
+How this cognitive load could be determined, i.e. by measurement.
 
 \subsection{Physiological response to cognitive load}
 How a human body responds to cognitive load/stress. 
 
-\subsection{Determining cognitive load}
-How this cognitive load could be determined, i.e. by measurement.
 
 \subsubsection{Measurement of physiological response}
 Measuring heart rate, breathing, eeg, gsr, etc.
@@ -59,9 +86,9 @@ Most applications and research regarding cognitive
 
 
 \paragraph{Usability testing}
-Cognitive load measures, and more generally stress and arousal measures, are used by human computer interaction (HCI) developers and researchers to evaluate the usability of software or systems \cite{Jacob2003} \cite{Schmutz2009}.
+Cognitive load measures, and more generally stress and arousal measures, are used by human computer interaction (HCI) developers and researchers to evaluate the usability of software or systems \citep{Jacob2003} \citep{Schmutz2009}.
 
-Schmutz et al. \cite{Schmutz2009} investigated cognitive load measurement in web applications. Concluded was that cognitive load measures can be used as a \"valuable additional measure of efficiency", which strongly correlated to general satisfaction of the user. 
+Schmutz et al. \citep{Schmutz2009} investigated cognitive load measurement in web applications. Concluded was that cognitive load measures can be used as a \"valuable additional measure of efficiency", which strongly correlated to general satisfaction of the user. 
 
 
 
@@ -71,7 +98,7 @@ Using features extracted from GSR data to determine cognitive load, data gathere
 \subsection{State of the art}
 Galvanic skin response readings have been studied in regard to cognitive load.
 
-Shi et al. \cite{Shi2007} investigated the possibility of using GSR as an index of cognitive load during the use of unimodal and multimodal versions of the same interface. It has been shown that multimodal interfaces "support the user in managing cognitive load" \cite{Oviatt2004}, and thus multimodal interfaces have a lower corresponding cognitive load. 
+Shi et al. \citep{Shi2007} investigated the possibility of using GSR as an index of cognitive load during the use of unimodal and multimodal versions of the same interface. It has been shown that multimodal interfaces "support the user in managing cognitive load" \citep{Oviatt2004}, and thus multimodal interfaces have a lower corresponding cognitive load. 
 
 Shi et al. found that GSR values increase when cognitive load levels increase across all subjects, and conclude that GSR can be used to "serve as an objective indicator of [a] user's cognitive load".
 
@@ -82,7 +109,7 @@ Shi et al. found that GSR values increase when cognitive load levels increase ac
 \section{Methods}
 
 \subsection{Experiment}
-The experiment is mostly based on the arithmetic task experiment conducted by Nourbakhsh et al. \cite{Nourbakhsh2012}. The experiment involves adding up four numbers, displayed one by one, and selecting the right from three possible answers.
+The experiment is mostly based on the arithmetic task experiment conducted by Nourbakhsh et al. \citep{Nourbakhsh2012}. The experiment involves adding up four numbers, displayed one by one, and selecting the right from three possible answers.
 
 There are four difficulty levels of this task. Difficulty one involves adding up binary numbers (1 and 0). Difficulty level two, three and four consists of numbers with a length of one, two and three digits respectively.
 
@@ -225,6 +252,6 @@ Future research could include investigating how viable this method is given more
 
 % -- Bibliography
 \bibliography{ref}{}
-\bibliographystyle{plain}
+%\bibliographystyle{plain}
 
 \end{document}

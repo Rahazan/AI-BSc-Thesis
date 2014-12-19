@@ -6,6 +6,7 @@
 *.blg
 *.bcf
 *.run.xml
+*.out
 Thumbs.db
 
 out
