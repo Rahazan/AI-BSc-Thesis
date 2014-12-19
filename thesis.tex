@@ -304,6 +304,8 @@ Two classifiers (predictive models) were trained with each algorithm, one for 4-
 \chapter{Results}
 \section{Classification accuracy}
 \begin{table}[h]
+\caption {Classication accuracy} 
+\center
 \begin{tabular}{@{}lrr@{}}
 \toprule
 Classification Algorithm & \multicolumn{1}{l}{2-Class Classification} & \multicolumn{1}{l}{4-Class Classification} \\ \midrule
@@ -323,11 +325,11 @@ The performance of each predictive model was estimated using 10 fold cross-valid
 \caption {NaiveBayes confusion matrix} 
 \center
 \begin{tabular}{ccccl}
-\multicolumn{1}{l}{1} & \multicolumn{1}{l}{2} & \multicolumn{1}{l}{3} & \multicolumn{1}{l}{4} & \small{\textless- Classified as} \\ \cline{1-4}
+\multicolumn{1}{l}{1} & \multicolumn{1}{l}{2} & \multicolumn{1}{l}{3} & \multicolumn{1}{l}{4} & \small{\textless- Classified as difficulty} \\ \cline{1-4}
 1                          & 7                          & 1                          & \multicolumn{1}{c|}{3}     & Difficulty 1                    \\
 3                          & 7                          & 0                          & \multicolumn{1}{c|}{2}     & Difficulty 2                    \\
 2                          & 4                          & 2                          & \multicolumn{1}{c|}{4}     & Difficulty 3                    \\
-2                          & 2                          & 1                          & \multicolumn{1}{c|}{7}     & Difficulty 3                   
+2                          & 2                          & 1                          & \multicolumn{1}{c|}{7}     & Difficulty 4                   
 \end{tabular}
 \end{table}
 
@@ -339,11 +341,11 @@ The performance of each predictive model was estimated using 10 fold cross-valid
 \caption {LibSVM confusion matrix} 
 \center
 \begin{tabular}{ccccl}
-\multicolumn{1}{l}{1} & \multicolumn{1}{l}{2} & \multicolumn{1}{l}{3} & \multicolumn{1}{l}{4} & \small{\textless- Classified as} \\ \cline{1-4}
+\multicolumn{1}{l}{1} & \multicolumn{1}{l}{2} & \multicolumn{1}{l}{3} & \multicolumn{1}{l}{4} & \small{\textless- Classified as difficulty} \\ \cline{1-4}
 1                          & 5                          & 6                          & \multicolumn{1}{c|}{0}     & Difficulty 1                    \\
 5                          & 3                          & 3                          & \multicolumn{1}{c|}{1}     & Difficulty 2                    \\
 3                          & 1                          & 5                          & \multicolumn{1}{c|}{3}     & Difficulty 3                    \\
-5                          & 0                          & 5                          & \multicolumn{1}{c|}{2}     & Difficulty 3                   
+5                          & 0                          & 5                          & \multicolumn{1}{c|}{2}     & Difficulty 4                   
 \end{tabular}
 \end{table}
 
@@ -353,11 +355,11 @@ The performance of each predictive model was estimated using 10 fold cross-valid
 \caption {MultilayerPerceptron confusion matrix} 
 \center
 \begin{tabular}{ccccl}
-\multicolumn{1}{l}{1} & \multicolumn{1}{l}{2} & \multicolumn{1}{l}{3} & \multicolumn{1}{l}{4} & \small{\textless- Classified as} \\ \cline{1-4}
+\multicolumn{1}{l}{1} & \multicolumn{1}{l}{2} & \multicolumn{1}{l}{3} & \multicolumn{1}{l}{4} & \small{\textless- Classified as difficulty} \\ \cline{1-4}
 3                          & 4                          & 3                          & \multicolumn{1}{c|}{2}     & Difficulty 1                    \\
 3                          & 5                          & 2                          & \multicolumn{1}{c|}{2}     & Difficulty 2                    \\
 2                          & 3                          & 6                          & \multicolumn{1}{c|}{1}     & Difficulty 3                    \\
-2                          & 1                          & 3                          & \multicolumn{1}{c|}{6}     & Difficulty 3                   
+2                          & 1                          & 3                          & \multicolumn{1}{c|}{6}     & Difficulty 4                   
 \end{tabular}
 \end{table}
 
