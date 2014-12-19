@@ -1,16 +1,13 @@
-\documentclass[12pt,leqno,letterpaper]{report} %fleqn
-%\setlength{\parindent}{0pt}
-%\setlength{\parskip}{0.18cm}
+\documentclass[11pt,leqno,letterpaper]{report} %fleqn
 
 
-%\usepackage{cite}
 \usepackage{natbib}
 \usepackage{hyperref}
-%\bibliographystyle{plainnat}
+
 \bibliographystyle{abbrvnat}
 \usepackage{booktabs}
-\begin{document}
 
+\begin{document}
 \begin{titlepage}
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
@@ -371,13 +368,19 @@ The performance of each predictive model was estimated using 10 fold cross-valid
 
 \chapter{Discussion}
 \section{Interpretation}
-The results show that the predictive power from 
+The results show that the classification accuracy of all three classifiers are not overwhelmingly high. In the binary classification task the results were more reasonable.
+
+Looking at the confusion matrices of the 4-class classification one can see that most wrongly classified task difficulties was task 1, which was more often classified as difficulty 2 and 3 than 1. In fact, it has only been classified correct once out of twelve entries in the NaiveBayes and LibSVM model, and a mere three times in the MultilayerPerceptron model. Perhaps this task was too easy and caused participants to become distracted.
+
+These classification rates are slightly lower than those reported by \citep{Nourbakhsh2013} in a similar experiment, this may be due to the smaller dataset.
+
+There are many possible explanations why this classification accuracy is not greater than it is. The first explanation is that from just GSR data, it simply can not be predicted any better. Next I will highlight some other possible reasons:
 
 
 \citep{small}
 
 \subsubsection{Loss of information from filter}
-Filtering the data, to remove the DC current noise, lead to some slight loss of data. It smoothed peaks ever so slightly, this may have influenced the classification rate.
+Filtering the data, to remove the DC current noise, lead to some slight loss of data. It smoothed peaks slightly, which may have influenced the classification rate.
 
 
 \subsubsection{Task bleeding}
@@ -386,7 +389,7 @@ Another explanation may be the bleeding of tasks into other tasks. If for instan
 This is mitigated by the random order in which the tasks are presented and the time between tasks, however with the relatively small subject pool it is not unimaginable this has had it´s effect on the classification accuracy.
 
 \subsubsection{Dataset size}
-With 6 subjects and 8 tasks per subject, the total dataset had 48 entries. Training a classification algorithm on a small dataset may cause outliers to influence it to fairly great effect.
+With 6 subjects and 8 tasks per subject, the total dataset consisted of 48 entries. Training a classification algorithm on a small dataset may cause outliers to influence it to fairly great effect.
 
 \subsubsection{Task cognitive load manipulation}
 Despite \citep{Nourbakhsh2013} showing that the tasks effectively manipulate the cognitive load of the subject, this was concluded from subjective reports and response times. It may be that these response times were manipulated by something other than cognitive load, and that the tasks do not evoke a difference in cognitive load in the subject. It may also be that this difference in cognitive load is very small, making classification harder, especially with more than two classes.
@@ -395,8 +398,9 @@ Despite \citep{Nourbakhsh2013} showing that the tasks effectively manipulate the
 All extracted features were features from the time domain, frequency domain features were shown by \citep{Nourbakhsh2012} to significantly correlate with the task difficulty as well. Adding frequency domain features to the featureset, may improve classification rates.
 
 \section{Future research}
-Future research could include investigating how viable this method is given more portable (consumer) sensors in a real life setting. 
-
+Future research could be measuring GSR data using longer, carefully designed tasks, of which the cognitive load can be determined using an established cognitive load index.
+Also future research could include investigate how classification accuracy changes when using data measured by more portable (consumer) sensors, whose measurements are likely of lesser quality than the used lab equipment in this experiment.
+ 
 
 
 
