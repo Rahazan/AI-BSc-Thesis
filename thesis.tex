@@ -50,7 +50,7 @@ This cognitive load is influenced by how the material or task is presented. It c
 This cognitive load is determined by the complexity of the material at hand. It can be reduced by splitting up the task or building upon former (informal) knowledge.
 
 \paragraph{Germane cognitive load}
-Germane cognitive load is the cognitive load associated with the process of building, acquiring and automating new schemas. The greater the space for this load (by reducing the intrinsic and extraneous cognitive load), the greater the ease of learning.
+Germane cognitive load is the cognitive load associated with the process of building, acquiring and automating new schemas. The greater the space in working memory for this load (by reducing the intrinsic and extraneous cognitive load), the greater the ease of learning.
 
 
 \section{Determining cognitive load}
@@ -176,43 +176,65 @@ NormGSR(s,q,t) = \frac{GSR(s,q,t)}{AverageGSR(s)}
 
 Note that the normalization is done by dividing by the average of the subject over all tasks, and not by simply transforming all measurements to be between 0 and 1. What (original) GSR value would become 1 and 0 would then be quite arbitrary per subject, and not all subjects would be on the same scale, as outliers can totally influence this range.
 
-
-
-
-
-
-\[
-AvgTaskGSR(s,q) = \frac { \sum_{t \in T_q} NormGSR(s,q,t) }
-{\left\vert{T_q}\right\vert }
-\]
-
-\[
-StdDevTaskGSR(s,q) = \sqrt {\frac{1}{\left\vert{T_q}\right\vert}   \sum_{t \in T_q} (NormGSR(s,q,t) - AvgTaskGSR(s,q))^2 }
-\]
-
-\[
-DiffTaskGSR(s,q) = NormGSR(s,q, t_0) - NormGSR(s,q, t_{\left\vert{T_q}\right\vert})
-\]
-
 This normalised GSR 
 
 
 These tasks were then smoothed one last time, to get rid of a small remaining amount of DC noise. This was again done using a Savitzky-Golay filter.
 
 \subsection{Transformation}
-From the measurements from every task features were extracted. 
+From the measurements from every task certain time domain features were extracted. 
 
-The extracted time domain features:
+The extracted features:
 
-- Average over all points in the task.
-- Accumulative of all points in the task.
-- Standard deviation of all points in the task.
-- Difference between first and last point of the task.
-- Peaks
+\begin{itemize}
+
+\item Average over all points in the task.
+\item Accumulative of all points in the task.
+\item Standard deviation of all points in the task.
+\item Difference between first and last point of the task.
+\item Peaks with varying tresholds of what a peak is.
+\end{itemize}
+
+Below I will elaborate how these features were calculated from the data. In these formula's $s$ is a subject, $q$ is a task and $T_q$ are all the measurements (datapoints) associated with task $q$.
 
 \paragraph{Average}
 
+\[
+AvgTaskGSR(s,q) = \frac { \sum_{t \in T_q} NormGSR(s,q,t) }
+{\left\vert{T_q}\right\vert }
+\]
+
 \paragraph{Accumulative}
+
+\[
+AccTaskGSR(s,q) =  \sum_{t \in T_q} NormGSR(s,q,t)
+\]
+
+\paragraph{Standard deviation}
+
+\[
+StdDevTaskGSR(s,q) = \sqrt {\frac{1}{\left\vert{T_q}\right\vert}   \sum_{t \in T_q} (NormGSR(s,q,t) - AvgTaskGSR(s,q))^2 }
+\]
+
+\paragraph{Difference}
+
+\[
+DiffTaskGSR(s,q) = NormGSR(s,q, t_{\left\vert{T_q}\right\vert}) - NormGSR(s,q, t_0)
+\]
+where $t_0$ is the first measurement in $T_q$, and $t_{\left\vert{T_q}\right\vert}$ the last measurement of the task.
+
+\paragraph{Peaks}
+For peak detection the \emph{PeakFinder} script \citep{yoder}, found in the \emph{Matlab Central File Exchange} was used under BSD License. This script finds local maxima or minima, even in noisy signals, and can be supplied with a treshold that determines what classifies as a peak.
+
+This script was called with four different threshold levels, given by
+
+\[
+Threshold(s,q,k) = \frac 
+{\max_{t \in T_q} NormGSR(s,q,t) - \min_{t \in T_q} NormGSR(s,q,t)} 
+{(2k)^2}
+\]
+
+with $k \in \{1,2,3,4\}$.
 
 
 \subsection{Data mining}

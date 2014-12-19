@@ -90,8 +90,8 @@ function subjresult = addFeatures(subject, subjresult, index, diff, normalized)
             avg = acc / length(normalized{index});
             stdev = std(normalized{index});
             
-            l = length(normalized{index});
-            diff = normalized{index}(1) - normalized{index}(l); 
+            le = length(normalized{index});
+            diff = normalized{index}(le) - normalized{index}(1); 
 
             sel = max(normalized{index})-min(normalized{index});
             
