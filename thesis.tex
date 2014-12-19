@@ -92,11 +92,13 @@ Using features extracted from GSR data to determine cognitive load, data gathere
 \section{State of the art}
 Galvanic skin response readings have been studied in regard to cognitive load.
 
-Shi et al. \citep{Shi2007} investigated the possibility of using GSR as an index of cognitive load during the use of unimodal and multimodal versions of the same interface. It has been shown that multimodal interfaces "support the user in managing cognitive load" \citep{Oviatt2004}, and thus multimodal interfaces have a lower corresponding cognitive load. 
+\citep{Shi2007} investigated the possibility of using GSR as an index of cognitive load during the use of unimodal and multimodal versions of the same interface. It has been shown that multimodal interfaces "support the user in managing cognitive load" \citep{Oviatt2004}, and thus multimodal interfaces have a lower corresponding cognitive load. 
 
 Shi et al. found that GSR values increase when cognitive load levels increase across all subjects, and conclude that GSR can be used to "serve as an objective indicator of [a] user's cognitive load".
 
+\citep{Nourbakhsh2012} showed that 
 
+In the follow-up research by Nourbakhsh et al. \citep{Nourbakhsh2013} GSR and blink features were used for cognitive load classification. Combining these two featuresets, around 75\% accuracy for binary classification, and 50\% accuracy for four-class classification was achieved. Only GSR features lead to accuracies of around 35\% and 66\% for binary and 4-class classification resepctively.
 
 
 
@@ -108,6 +110,8 @@ The experiment is mostly based on the arithmetic task experiment conducted by No
 There are four difficulty levels of this task. Difficulty one involves adding up binary numbers (1 and 0). Difficulty level two, three and four consists of numbers with a length of one, two and three digits respectively.
 
 The subject is first shown an amount of stars corresponding to the difficulty level for 8 seconds, after which the numbers are shown one by one for 4 seconds. Three answers are then presented on the screen, of which one is correct. The subject then clicks the correct answer using a standard computer mouse. There was no time limit for selecting an answer.
+
+In \citep{Nourbakhsh2013} these tasks were shown to have significant difference in subjective ratings of task difficulty levels, as well as a siginificant difference in response time of different task levels. From which is shown that these designed tasks manipulate cognitive load effectively.
 
 
 \subsection{Apparatus}
@@ -211,10 +215,8 @@ The extracted time domain features:
 \paragraph{Accumulative}
 
 
-
-
 \subsection{Data mining}
-\subsection{Interpretation}
+
 
 \chapter{Results}
 
@@ -222,18 +224,27 @@ The extracted time domain features:
 \section{..?}
 
 \chapter{Discussion}
-\section{Viability}
-The results show that from the results 
+\section{Interpretation}
+The results show that from the results
 
-Unfortunately I can not make any conclusions regarding 
+
+\subsubsection{Loss of information from filter}
+Filtering the data, to remove the DC current noise, lead to some slight loss of data. It smoothed peaks ever so slightly, this may have influenced the classification rate.
+
 
 \subsubsection{Task bleeding}
 Another explanation may be the bleeding of tasks into other tasks. If for instance a subject first gets two hard tasks, and then an easy one, it is imaginable that the subject´s GSR value for that easy task is higher than it would have been without first having done harder tasks. 
 
 This is mitigated by the random order in which the tasks are presented and the time between tasks, however with the relatively small subject pool it is not unimaginable this has had it´s effect on the classification accuracy.
 
+\subsubsection{Dataset size}
+With 6 subjects and 8 tasks per subject, the total dataset had 48 entries. Training a classification algorithm on a small dataset may cause outliers to influence it to fairly great effect.
 
+\subsubsection{Task cognitive load manipulation}
+Despite \citep{Nourbakhsh2013} showing that the tasks effectively manipulate the cognitive load of the subject, this was concluded from subjective reports and response times. It may be that these response times were manipulated by something other than cognitive load, and that the tasks do not evoke a difference in cognitive load in the subject. It may also be that this difference in cognitive load is very small, making classification harder, especially with more than two classes.
 
+\subsubsection{Frequency domain features}
+All extracted features were features from the time domain, frequency domain features were shown by \citep{Nourbakhsh2012} to significantly correlate with the task difficulty as well. Adding frequency domain features to the featureset, may improve classification rates.
 
 \subsection{Future research}
 Future research could include investigating how viable this method is given more portable (consumer) sensors in a real life setting. 
