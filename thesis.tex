@@ -51,10 +51,6 @@ Ervin \textsc{Poljac}
 \end{flushright}
 \end{minipage}\\[4cm]
 
-% If you don't want a supervisor, uncomment the two lines below and remove the section above
-%\Large \emph{Author:}\\
-%John \textsc{Smith}\\[3cm] % Your name
-
 %----------------------------------------------------------------------------------------
 %	DATE SECTION
 %----------------------------------------------------------------------------------------
@@ -82,6 +78,9 @@ Ervin \textsc{Poljac}
 
 
 \chapter{Introduction}
+
+To do: Inleidend verhaal
+
 \section{Cognitive load}
 \emph{Cognitive load theory} \citep{Sweller1994} revolves around the idea that (short-term) working memory is limited, whereas long-term memory is unlimited. 
 
@@ -105,29 +104,24 @@ Germane cognitive load is the cognitive load associated with the process of buil
 
 
 \section{Determining cognitive load}
-\citep{brunken2003direct}
-How this cognitive load could be determined, i.e. by measurement.
+To do: \citep{brunken2003direct} is a good survey
+How this cognitive load could be determined, i.e. by physiological measurement.
 
 \section{Physiological response to cognitive load}
-How a human body responds to cognitive load/stress. 
+To do: How a human body responds to cognitive load physiologically, why this measurement method is a good idea. 
+
+\subsection{Galvanic Skin Response}
+
+Galvanic Skin Response (GSR) is an interesting physiological response to measure as sensors are cheap and simple, and the subject is not or marginally restricted in movement. Also, new devices such are smartwatches are fitted with GSR electrodes increasingly often.
 
 
-\subsection{Measurement of physiological response}
-Measuring heart rate, breathing, eeg, gsr, etc.
 
-With an increasing variety in consumer 
-
-\paragraph{Galvanic Skin Response}
-
-
-%\subsubsection{Classification}
-%How sense can be made from this data
 
 \subsection{Applications}
-How this can be used.
+There are many applications where knowing the cognitive load of a person yields valuable information. Here I will highlight two:
 
-\paragraph{Learning}
-Most applications and research regarding cognitive 
+\paragraph{(Multimedia) Learning}
+Most applications and research regarding cognitive load theory is applied in the context of multimedia learning \citep{brunken2003direct}. The goal in this domain is to find the way to structure and present learning to ease learning the most. In other words, to reduce the intrinsic and extraneous cognitive load as much as possible, so that more working memory is left for germane cognitive load.
 
 
 \paragraph{Usability testing}
@@ -138,7 +132,7 @@ Cognitive load measures, and more generally stress and arousal measures, are use
 
 
 \section{Research aim}
-Using features extracted from GSR data to determine cognitive load, data gathered from experiment.
+The goal of this thesis is to investigate the possibility of determining what the cognitive load of a person is, given GSR measurements. An explorative experiment will be used with different task, each of which evoke a different level of cognitive load. From this data a classifier (predictive model) is built, which can classify which task the user was doing, and thus say something about the cognitive load of a person.
 
 \section{State of the art}
 Galvanic skin response readings have been studied in regard to cognitive load.
@@ -147,7 +141,7 @@ Galvanic skin response readings have been studied in regard to cognitive load.
 
 Shi et al. found that GSR values increase when cognitive load levels increase across all subjects, and conclude that GSR can be used to "serve as an objective indicator of [a] user's cognitive load".
 
-\citep{Nourbakhsh2012} showed that 
+\citep{Nourbakhsh2012} showed that both time and frequency domain features from GSR data significantly correlate to the cognitive load of a person.
 
 In the follow-up research by Nourbakhsh et al. \citep{Nourbakhsh2013} GSR and blink features were used for cognitive load classification. Combining these two featuresets, around 75\% accuracy for binary classification, and 50\% accuracy for four-class classification was achieved. Only GSR features lead to accuracies of around 35\% and 66\% for binary and 4-class classification resepctively.
 
@@ -227,10 +221,7 @@ NormGSR(s,q,t) = \frac{GSR(s,q,t)}{AverageGSR(s)}
 
 Note that the normalization is done by dividing by the average of the subject over all tasks, and not by simply transforming all measurements to be between 0 and 1. What (original) GSR value would become 1 and 0 would then be quite arbitrary per subject, and not all subjects would be on the same scale, as outliers can totally influence this range.
 
-This normalised GSR 
-
-
-These tasks were then smoothed one last time, to get rid of a small remaining amount of DC noise. This was again done using a Savitzky-Golay filter.
+This normalised GSR was then cut into the specific tasks. A task (slice of data) runs from the time that the first number is shown, to the time that an answer is given. These tasks were then smoothed one last time, to get rid of a small remaining amount of DC noise. This was again done using a Savitzky-Golay filter.
 
 \subsection{Transformation}
 From the measurements from every task certain time domain features were extracted. 
@@ -312,7 +303,7 @@ MultilayerPerceptron     & 56.3\%                                     & 41.7\%  
 \end{tabular}
 \end{table}
 
-The performance of each predictive model was estimated using 10 fold cross-validation. The percentages is the percentage of correctly classified task difficulties by the predictive model.
+The performance of each predictive model was estimated using 10 fold cross-validation. The percentages in the table are the percentage of correctly classified task difficulties by the predictive model.
 \pagebreak
 
 \section{Confusion matrices}
