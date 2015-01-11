@@ -1,4 +1,4 @@
-\documentclass[11pt,leqno,letterpaper]{report} %fleqn
+\documentclass[11pt,leqno,a4paper]{report} %fleqn
 
 
 \usepackage{natbib}
@@ -36,7 +36,7 @@
 
 \begin{minipage}{0.4\textwidth}
 \begin{flushleft} \large
-\emph{Author:}\\
+\emph{By:}\\
 Guido \textsc{Zuidhof} % Your name
 \\\small{guido.zuidhof@student.ru.nl}
 \end{flushleft}
@@ -69,13 +69,13 @@ Ervin \textsc{Poljac}
 
 \end{titlepage}
 
-\begin{abstract}
-To do.
-\end{abstract}
 
 \tableofcontents 
 \addcontentsline{toc}{chapter}{Introduction}
 
+\begin{abstract}
+To do.
+\end{abstract}
 
 
 \chapter{Introduction}
@@ -103,6 +103,17 @@ This cognitive load is determined by the complexity of the material at hand. It 
 \paragraph{Germane cognitive load}
 Germane cognitive load is the cognitive load associated with the process of building, acquiring and automating new schemas. The greater the space in working memory for this load (by reducing the intrinsic and extraneous cognitive load), the greater the ease of learning.
 
+\subsection{Applications}
+There are many applications where knowing the cognitive load of a person yields valuable information. Here I will highlight two:
+
+\paragraph{Learning}
+Most applications and research regarding cognitive load theory is applied in the context of multimedia learning \citep{brunken2003direct}. The goal in this domain is to find the way to structure and present information to ease learning the most. In other words, to reduce the intrinsic and extraneous cognitive load as much as possible, so that more working memory is left for germane cognitive load.
+
+
+\paragraph{Usability testing}
+Cognitive load measures, and more generally stress and arousal measures, are used by human computer interaction (HCI) developers and researchers to evaluate the usability of software or systems \citep{Jacob2003} \citep{Schmutz2009}.
+
+\citep{Schmutz2009} investigated cognitive load measurement in web applications. Concluded was that cognitive load measures can be used as a \textit{"valuable additional measure of efficiency"}, which strongly correlated to general satisfaction of the user. 
 
 \section{Determining cognitive load}
 To do: How this cognitive load could be determined, i.e. by physiological measurement.
@@ -113,29 +124,18 @@ To do: How a human body responds to cognitive load physiologically, why this mea
 
 \subsection{Galvanic Skin Response}
 
-Galvanic Skin Response (GSR) is an interesting physiological response to measure as sensors are cheap and simple, and the subject is not or marginally restricted in movement. For this reason GSR is the biometric of choice in this explorative study.
+Galvanic Skin Response (GSR) is an interesting physiological response to measure as sensors are cheap and simple, and the subject is not or marginally restricted in movement. To this end GSR is the biometric of choice in this explorative study.
 
-For this reason mobile GSR measurement systems, for instance around the foot \citep{Gravenhorst} are being developed to measure (patients) throughout the day. Also, new devices such as smartwatches are fitted with GSR electrodes increasingly often, which means findings could be applied there.
+For this reason mobile GSR measurement systems, for instance around the foot \citep{Gravenhorst} are being developed to measure (patients) throughout the day. Also, new devices such as smartwatches are fitted with GSR electrodes increasingly often, which means findings could be applied there. An example would be using GSR data measured by a smart watch to dynamically change an application's presentation of information.
 
-GSR can be measured in two ways, by measuring conductance (in siemens) or resistance (in ohms). Measuring skin conductance \textit{"bears a simpler more linear relationship to the underlying processes of psychological interest than its repriprocal, SR [skin resistance]"} \citep{lykken1971direct}, for this reason any GSR measurement in this thesis is done by measuring skin conductance.
-
-
-\subsection{Applications}
-There are many applications where knowing the cognitive load of a person yields valuable information. Here I will highlight two:
-
-\paragraph{(Multimedia) Learning}
-Most applications and research regarding cognitive load theory is applied in the context of multimedia learning \citep{brunken2003direct}. The goal in this domain is to find the way to structure and present learning to ease learning the most. In other words, to reduce the intrinsic and extraneous cognitive load as much as possible, so that more working memory is left for germane cognitive load.
-
-
-\paragraph{Usability testing}
-Cognitive load measures, and more generally stress and arousal measures, are used by human computer interaction (HCI) developers and researchers to evaluate the usability of software or systems \citep{Jacob2003} \citep{Schmutz2009}.
-
-\citep{Schmutz2009} investigated cognitive load measurement in web applications. Concluded was that cognitive load measures can be used as a \textit{"valuable additional measure of efficiency"}, which strongly correlated to general satisfaction of the user. 
-
-
+GSR can be measured in two ways, by measuring conductance (in siemens) or resistance (in ohms). Measuring skin conductance \textit{"bears a simpler more linear relationship to the underlying processes of psychological interest than its repriprocal, SR [skin resistance]"} \citep{lykken1971direct}, therefore any GSR measurement in this thesis is done by measuring skin conductance.
 
 \section{Research aim}
-The goal of this thesis is to investigate the possibility of determining what the cognitive load of a person is, given GSR measurements. An explorative experiment will be used with different task, each of which evoke a different level of cognitive load. From this data a classifier (predictive model) is built, which can classify which task the user was doing, and thus say something about the cognitive load of a person.
+The goal of this thesis is to investigate the possibility of determining what the cognitive load of a person is, given GSR measurements. An explorative experiment will be used with different tasks, each of which evokes a different level of cognitive load. From this data a classifier is built, which can classify which task the user was doing based on features derived from GSR, and thus say something about the cognitive load of a person.
+
+The research question reads
+
+
 
 \section{State of the art}
 Galvanic skin response readings have been studied in regard to cognitive load.
@@ -144,18 +144,19 @@ Galvanic skin response readings have been studied in regard to cognitive load.
 
 Shi et al. found that GSR values increase when cognitive load levels increase across all subjects, and conclude that GSR can be used to "serve as an objective indicator of [a] user's cognitive load".
 
-\citep{Nourbakhsh2012} showed that both time and frequency domain features from GSR data significantly correlate to the cognitive load of a person.
+\citep{Nourbakhsh2012} showed that both time and frequency domain features from GSR data significantly correlate with the cognitive load of a person.
 
 In the follow-up research GSR and blink features were used for cognitive load classification \citep{Nourbakhsh2013}. Combining these two featuresets, around 75\% accuracy for binary classification, and 50\% accuracy for four-class classification was achieved. Only GSR features lead to accuracies of around 35\% and 66\% for binary and 4-class classification resepctively.
 
+\section{Organization of this thesis}
 
 
 \chapter{Method}
 
 \section{Experiment}
-The experiment is mostly based on the arithmetic task experiment conducted by Nourbakhsh et al. \citep{Nourbakhsh2012}. The experiment involves adding up four numbers, displayed one by one, and selecting the right from three possible answers.
+The experiment is mostly based on the arithmetic task experiment conducted by Nourbakhsh et al. \citep{Nourbakhsh2012}. The experiment involves adding up four numbers, displayed one by one, and selecting an answer from three possible answers.
 
-There are four difficulty levels of this task. Difficulty one involves adding up binary numbers (1 and 0). Difficulty level two, three and four consists of numbers with a length of one, two and three digits respectively.
+There are four difficulty levels of this task. Difficulty one involves adding up four binary numbers (1 and 0). Difficulty level two, three and four consists of adding up  four numbers with a length of one, two and three digits respectively.
 
 The subject is first shown an amount of stars corresponding to the difficulty level for 8 seconds, after which the numbers are shown one by one for 4 seconds. Three answers are then presented on the screen, of which one is correct. The subject then clicks the correct answer using a standard computer mouse. There was no time limit for selecting an answer.
 
@@ -164,7 +165,7 @@ In \citep{Nourbakhsh2013} these tasks were shown to have significant difference 
 
 \subsection{Apparatus}
 The task was displayed in a 15.6" laptop screen, input was given using a standard computer mouse.
-Two galvanic skin response sensors were used in this experiment. The participants wore both at the same time on the left arm.
+Two galvanic skin response sensors were used in this experiment. The participants wore both at the same time on the left arm. Below, the two sensors are briefly discussed.
 
 
 \paragraph{Affectiva Q Sensor}
@@ -176,21 +177,19 @@ The BIOPAC MP30 was used in conjunction with finger GSR sensors. This sensor wra
 The sampling rate was set to 1000 samples per second.
 
 \subsection{Participants}
-Six participants took part in this experiment, five male and one female. Their ages ranged between 19 and 25 at the time of the experiment. They were not compensated for their participation.
-
-
+Six participants took part in this experiment, five male and one female. Their age ranged between 19 and 25 at the time of the experiment. They were not compensated for their participation.
 
 
 \subsection{Task}
 
 \subsection{Experimental Design}
-The task consisted of 12 arithmetic tasks, with 4 difficulty levels. Three of every difficulty level were completed by the participants, in a random order. 
+The task consisted of 8 arithmetic tasks, with 4 difficulty levels. Three of every difficulty level were completed by the participants, in a random order. 
 
-The task consisted of adding up three numbers, and selecting the right answer from three options. The numbers to add were showed one by one, for four seconds. Before a task starts, a number of stars is shown equal to the difficulty level, for eight seconds. The tasks followed eachother without breaks. There was no time limit for selecting the answer, there was no feedback whether the selected answer was correct.
+A single task consisted of adding up four numbers, and selecting an answer answer from three options. The numbers to add were shown one by one, for four seconds. Before a task starts, a number of stars is shown equal to the difficulty level, for eight seconds. The tasks followed eachother without breaks. There was no time limit for selecting the answer, there was no feedback whether the selected answer was correct.
 
 
 \subsection{Procedure}
-The participants were first explained the task and seated in front of the laptop. Then the sensors were applied to the left hand and wrist. The participant is then instructed to place the left hand on the table in front of them and not to move it, in order to prevent movement or motion artifacts.
+The participants were first explained the task and seated in front of the laptop. Then the sensors were applied to the left hand and wrist. The participant was then instructed to place the left hand on the table in front of them and not to move it, in order to prevent possible motion artifacts which have been shown to influence GSR readings \citep{motionart}.
 
 \section{Analysis}
 
@@ -203,7 +202,7 @@ Any data discussed from here on is solely that collected using the BIOPAC MP30 a
 
 
 \subsection{Preprocessing}
-The collected data contained a DC current, which was smoothed by filtering and resampling to 100 samples per second using Savitzky-Golay filtering. 
+All data files were preprocessed using custom scripts written in \emph{MATLAB (The MathWorks, Inc.)}. The collected data contained a DC current, which was smoothed by filtering and resampling to 100 samples per second using a Savitzky-Golay filter \citep{savitzky1964smoothing}. 
 
 The data per subject was then cut into seperate frames, the tasks. A task (slice of data) runs from the time that the first number is shown, to the time that an answer is given. These tasks were then smoothed one last time, to get rid of a small remaining amount of DC noise. This was again done using a Savitzky-Golay filter.
 
@@ -268,9 +267,9 @@ StdDevTaskGSR(s,q) = \sqrt {\frac{1}{\left\vert{T_q}\right\vert}   \sum_{t \in T
 \paragraph{Difference}
 
 \[
-DiffTaskGSR(s,q) = NormGSR(s,q, t_{\left\vert{T_q}\right\vert}) - NormGSR(s,q, t_0)
+DiffTaskGSR(s,q) = NormGSR(s,q, t_{\left\vert{T_q}\right\vert}) - NormGSR(s,q, t_1)
 \]
-where $t_0$ is the first measurement in $T_q$, and $t_{\left\vert{T_q}\right\vert}$ the last measurement of the task.
+where $t_1$ is the first measurement in $T_q$, and $t_{\left\vert{T_q}\right\vert}$ the last measurement of the task.
 
 \paragraph{Peaks}
 For peak detection the \emph{PeakFinder} script \citep{yoder}, found in the \emph{Matlab Central File Exchange} was used under BSD License. This script finds local maxima or minima, even in noisy signals, and can be supplied with a treshold that determines what classifies as a peak.
@@ -291,9 +290,9 @@ with $k \in \{1,2,3,4\}$.
 These extracted features are then fed into \emph{Weka 3} \citep{weka}, which is data mining software in Java. 
 
 
-Three of the most commonly used classification algorithms were used \citep{small}. Namely a bayesian classification algorithm (\emph{Na\"iveBayes}, which is an implementation based on \citep{john1995estimating}), a support vector machine (SVM) classification algorithm (\emph{LibSVM}) \citep{libsvm} and a neural network classifier (\emph{MultilayerPerceptron}, with 8 hidden layers). 
+Three of the most commonly used classification algorithms were used \citep{small}. Namely a Bayesian classification algorithm (\emph{Na\"iveBayes}, which is an implementation based on \citep{john1995estimating}), a support vector machine (SVM) classification algorithm (\emph{LibSVM}) \citep{libsvm} and a neural network classifier (\emph{MultilayerPerceptron}, with 8 hidden layers). 
 
-Two classifiers (predictive models) were trained with each algorithm, one for 4-class classification, and one for 2-class (binary) classification (with task difficulty 1 and 2 combined, and 3 and 4 combined).
+Two classifiers  were trained with each algorithm, one for 4-class classification, and one for 2-class (binary) classification (with task difficulty 1 and 2 combined, and 3 and 4 combined).
 
 
 \chapter{Results}
@@ -366,11 +365,11 @@ The performance of each predictive model was estimated using 10 fold cross-valid
 
 \chapter{Discussion}
 \section{Interpretation}
-The results show that the classification accuracy of all three classifiers are not overwhelmingly high. In the binary classification task the results were more reasonable.
-
-Looking at the confusion matrices of the 4-class classification one can see that most wrongly classified task difficulties was task 1, which was more often classified as difficulty 2 and 3 than 1. In fact, it has only been classified correct once out of twelve entries in the NaiveBayes and LibSVM model, and a mere three times in the MultilayerPerceptron model. Perhaps this task was too easy and caused participants to become distracted.
-
+The results show that the classification accuracy of all three classifiers are better than chance dictates, however not much. In the binary classification task the results were more reasonable.
 These classification rates are slightly lower than those reported by \citep{Nourbakhsh2013} in a similar experiment, this may be due to the smaller dataset.
+
+When considering the confusion matrices of the 4-class classification it can be noted that most wrongly classified task difficulties was task 1, which was more often classified as difficulty 2 and 3 than 1. In fact, it has only been classified correct once out of twelve entries in the NaiveBayes and LibSVM model, and a mere three times in the MultilayerPerceptron model. Perhaps this task was too easy and caused participants to become distracted.
+
 
 There are many possible explanations why this classification accuracy is not greater than it is. The first explanation is that from just GSR data, it simply can not be predicted any better. Next I will highlight some other possible reasons:
 
@@ -382,6 +381,7 @@ Filtering the data, to remove the DC current noise, lead to some slight loss of 
 Another explanation may be the bleeding of tasks into other tasks. If for instance a subject first gets two hard tasks, and then an easy one, it is imaginable that the subject´s GSR value for that easy task is higher than it would have been without first having done harder tasks. 
 
 This is mitigated by the random order in which the tasks are presented and the time between tasks, however with the relatively small subject pool it is not unimaginable this has had it´s effect on the classification accuracy.
+
 
 \subsubsection{Dataset size}
 With 6 subjects and 8 tasks per subject, the total dataset consisted of 48 entries. Training a classification algorithm on a small dataset may cause outliers to influence it to fairly great effect.
