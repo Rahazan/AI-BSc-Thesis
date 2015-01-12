@@ -3,9 +3,13 @@
 
 \usepackage{natbib}
 \usepackage{hyperref}
-
+\usepackage{graphicx}
 \bibliographystyle{abbrvnat}
 \usepackage{booktabs}
+\usepackage{epstopdf}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
 
 \begin{document}
 \begin{titlepage}
@@ -61,7 +65,7 @@ Ervin \textsc{Poljac}
 %	LOGO SECTION
 %----------------------------------------------------------------------------------------
 
-%\includegraphics{Logo}\\[1cm] % Include a department/university logo - this will require the graphicx package
+\includegraphics[width=300pt]{radlogo}\\[1cm] % Include a department/university logo - this will require the graphicx package
  
 %----------------------------------------------------------------------------------------
 
@@ -103,7 +107,7 @@ This cognitive load is determined by the complexity of the material at hand. It 
 \paragraph{Germane cognitive load}
 Germane cognitive load is the cognitive load associated with the process of building, acquiring and automating new schemas. The greater the space in working memory for this load (by reducing the intrinsic and extraneous cognitive load), the greater the ease of learning.
 
-\subsection{Applications}
+\section{Applications}
 There are many applications where knowing the cognitive load of a person yields valuable information. Here I will highlight two:
 
 \paragraph{Learning}
@@ -126,18 +130,20 @@ To do: How a human body responds to cognitive load physiologically, why this mea
 
 Galvanic Skin Response (GSR) is an interesting physiological response to measure as sensors are cheap and simple, and the subject is not or marginally restricted in movement. To this end GSR is the biometric of choice in this explorative study.
 
-For this reason mobile GSR measurement systems, for instance around the foot \citep{Gravenhorst} are being developed to measure (patients) throughout the day. Also, new devices such as smartwatches are fitted with GSR electrodes increasingly often, which means findings could be applied there. An example would be using GSR data measured by a smart watch to dynamically change an application's presentation of information.
+Because of these features mobile GSR measurement systems, for instance around the foot \citep{Gravenhorst} are being developed to measure (patients) throughout the day. Also, new devices such as smartwatches are fitted with GSR electrodes increasingly often, which means findings could be applied there. An example would be using GSR data measured by a smart watch to dynamically change an application's presentation of information.
 
 GSR can be measured in two ways, by measuring conductance (in siemens) or resistance (in ohms). Measuring skin conductance \textit{"bears a simpler more linear relationship to the underlying processes of psychological interest than its repriprocal, SR [skin resistance]"} \citep{lykken1971direct}, therefore any GSR measurement in this thesis is done by measuring skin conductance.
 
-\section{Research aim}
-The goal of this thesis is to investigate the possibility of determining what the cognitive load of a person is, given GSR measurements. An explorative experiment will be used with different tasks, each of which evokes a different level of cognitive load. From this data a classifier is built, which can classify which task the user was doing based on features derived from GSR, and thus say something about the cognitive load of a person.
+\begin{figure}[H]
+  \centering   
+    \includegraphics[width=0.9\textwidth]{gsr.jpg}
+  \caption{Typical skin conductance response (SCR) \cite{dow_sc_explained_}.}
+\end{figure}
 
-The research question reads
+Above is a figure showing the typical skin conductance response to a stimulus. Note the response onset, this onset can be up to 4 seconds from the stimulus onset \citep{dow_sc_explained_}
 
 
-
-\section{State of the art}
+\section{Related research}
 Galvanic skin response readings have been studied in regard to cognitive load.
 
 \citep{Shi2007} investigated the possibility of using GSR as an index of cognitive load during the use of unimodal and multimodal versions of the same interface. It has been shown that multimodal interfaces \textit{"support the user in managing cognitive load"} \citep{Oviatt2004}, and thus multimodal interfaces have a lower corresponding cognitive load. 
@@ -148,8 +154,18 @@ Shi et al. found that GSR values increase when cognitive load levels increase ac
 
 In the follow-up research GSR and blink features were used for cognitive load classification \citep{Nourbakhsh2013}. Combining these two featuresets, around 75\% accuracy for binary classification, and 50\% accuracy for four-class classification was achieved. Only GSR features lead to accuracies of around 35\% and 66\% for binary and 4-class classification resepctively.
 
-\section{Organization of this thesis}
+\section{Research aim}
+The goal of this thesis is to investigate the possibility of determining what the cognitive load of a person is, given GSR measurements. An explorative experiment will be used with different tasks, each of which evokes a different level of cognitive load. From this data a classifier is built, which can classify which task the user was doing based on features derived from GSR, and thus say something about the cognitive load of a person.
 
+The research question reads:
+
+\begin{center}
+Can cognitive load be classified from galvanic skin response measurements?
+\end{center}
+
+
+\subsection{Organization of this thesis}
+In the next chapter I will explain the method with which this research question is answered. Then, in chapter three, the results are presented, of which the implications are discussed in the final chapter.
 
 \chapter{Method}
 
@@ -166,6 +182,23 @@ In \citep{Nourbakhsh2013} these tasks were shown to have significant difference 
 \subsection{Apparatus}
 The task was displayed in a 15.6" laptop screen, input was given using a standard computer mouse.
 Two galvanic skin response sensors were used in this experiment. The participants wore both at the same time on the left arm. Below, the two sensors are briefly discussed.
+
+\begin{figure}[H]
+\hspace*{-.1\textwidth}        \centering
+        \begin{subfigure}[b]{0.6\textwidth}
+                \includegraphics[width=\textwidth]{affectiva.jpg}
+                \caption{Affectiva Q Sensor}
+                \label{fig:aff}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.6\textwidth}
+                \includegraphics[width=\textwidth]{bioelec.jpg}
+                \caption{BIOPAC MP30 finger electrodes}
+                \label{fig:bio}
+        \end{subfigure}
+        \caption{Sensors used in experiment}\label{fig:animals}
+\end{figure}
 
 
 \paragraph{Affectiva Q Sensor}
@@ -296,9 +329,64 @@ Two classifiers  were trained with each algorithm, one for 4-class classificatio
 
 
 \chapter{Results}
+
+\section{Gathered data}
+
+Below in figure 3.1 the raw data is shown from one of the subject over the course of the whole experiment (including some trailing seconds of disconnecting the measurement device). In figure 3.2 this data has been filtered using the first Savitzky-Golay filter.
+
+%Raw and filtered data of full experiment figure
+
+\begin{figure}[H]
+  \centering
+    \hspace*{-.25\textwidth}   
+    \includegraphics[width=1.5\textwidth]{measurements/raw.png}
+  \caption{Raw data from a single participant.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+ 	\hspace*{-.25\textwidth}   
+ 	\includegraphics[width=1.5\textwidth]{measurements/filtered.png}
+  \caption{Data from a single participant after Savitzky-Golay filter.}
+\end{figure}
+
+A typical task is shown in figure 3.3a, this is a slice of the data in plotted in figure 3.2. In 3.3b this data has been normalized as described in the previous chapter, as well as filtered using a Savitzky-Golay filter to smooth over any remaining noise.
+
+% Single task figure
+
+\begin{figure}[h!]
+\hspace*{-.2\textwidth}        \centering
+        \begin{subfigure}[b]{0.7\textwidth}
+                \includegraphics[width=\textwidth]{measurements/singletaskunnormal.png}
+                \caption{unnormalized}
+                \label{fig:gull}
+        \end{subfigure}%
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+          %(or a blank line to force the subfigure onto a new line)
+        \begin{subfigure}[b]{0.7\textwidth}
+                \includegraphics[width=\textwidth]{measurements/singletaskfilt.png}
+                \caption{filtered and normalized}
+                \label{fig:tiger}
+        \end{subfigure}
+        \caption{Task 3 (difficulty 2) of subject 2}\label{fig:animals}
+\end{figure}
+
+\pagebreak
+
+\section{Characteristics}
+
+\begin{figure}[H]
+  \centering
+ 	\hspace*{-.25\textwidth}   
+ 	\includegraphics[width=1.5\textwidth]{avggsr.eps}
+  \caption{Average GSR versus task difficulty.}
+\end{figure}
+
+
+
 \section{Classification accuracy}
 \begin{table}[h]
-\caption {Classication accuracy} 
+\caption {Classification accuracy} 
 \center
 \begin{tabular}{@{}lrr@{}}
 \toprule
@@ -310,6 +398,7 @@ MultilayerPerceptron     & 56.3\%                                     & 41.7\%  
 \end{table}
 
 The performance of each predictive model was estimated using 10 fold cross-validation. The percentages in the table are the percentage of correctly classified task difficulties by the predictive model.
+
 \pagebreak
 
 \section{Confusion matrices}
@@ -364,12 +453,15 @@ The performance of each predictive model was estimated using 10 fold cross-valid
 
 
 \chapter{Discussion}
+
+To rehash, the research question reads \emph{Can cognitive load be classified from galvanic skin response measurements?}. In this section I will attempt to answer this question with the results from this experiment.
+
 \section{Interpretation}
-The results show that the classification accuracy of all three classifiers are better than chance dictates, however not much. In the binary classification task the results were more reasonable.
+
+The results show that the classification accuracy of the classifiers are better than chance dictates for two out of three used classification algorithms, however not much. In the binary classification task the results were more reasonable, where every classifier performs better than chance.
 These classification rates are slightly lower than those reported by \citep{Nourbakhsh2013} in a similar experiment, this may be due to the smaller dataset.
 
 When considering the confusion matrices of the 4-class classification it can be noted that most wrongly classified task difficulties was task 1, which was more often classified as difficulty 2 and 3 than 1. In fact, it has only been classified correct once out of twelve entries in the NaiveBayes and LibSVM model, and a mere three times in the MultilayerPerceptron model. Perhaps this task was too easy and caused participants to become distracted.
-
 
 There are many possible explanations why this classification accuracy is not greater than it is. The first explanation is that from just GSR data, it simply can not be predicted any better. Next I will highlight some other possible reasons:
 
