@@ -4,9 +4,8 @@
 \usepackage{natbib}
 \usepackage{hyperref}
 \usepackage{graphicx}
-%\bibliographystyle{abbrvnat}
-\bibliographystyle{apacite}
-%\bibliographystyle{plainnat}
+%\bibliographystyle{apacite}
+\bibliographystyle{apalike}
 \usepackage{booktabs}
 \usepackage{epstopdf}
 \usepackage{float}
@@ -67,7 +66,7 @@ Ervin \textsc{Poljac}
 %	LOGO SECTION
 %----------------------------------------------------------------------------------------
 
-\includegraphics[width=300pt]{radlogo}\\[1cm] % Include a department/university logo - this will require the graphicx package
+\includegraphics[width=300pt]{radlogo.jpg}%\\ % Include a department/university logo - this will require the graphicx package
  
 %----------------------------------------------------------------------------------------
 
@@ -77,7 +76,7 @@ Ervin \textsc{Poljac}
 
 
 \tableofcontents 
-\addcontentsline{toc}{chapter}{Introduction}
+\addcontentsline{toc}{chapter}{}
 
 \begin{abstract}
 When performing a task, a certain amount of working memory is used. The amount of information a human is trying to process in working memory at any time is known as the cognitive load of a person. Biometrics can be used to determine this load. In this thesis of galvanic skin response measurements were used to classify the cognitive load of a person. To study this, a pilot experiment was conducted where every participant performed four tasks with varying difficulty levels, each of which associated with a certain cognitive load level. An average 4-class classification accuracy of roughly 35\%, and an average 2-class classification accuracy of around 62\% was achieved.
@@ -132,7 +131,7 @@ Knowing the cognitive load of a person can be used as an indicator for the menta
 
 \section{Determining cognitive load}
 
-There are many approaches to determining cognitive load. The figure below, from\citet{brunken2003direct}, puts the different methods in a matrix based on their objectivity and causal relationship between measurements and cognitive load. Every end of this spectrum has it's benefits and downsides, for instance, subjective methods are a good way to measure the cognitive associated with any task by having the subject fill out a questionnaire. They are however self-reported measured, and thus subjective, which means that the honesty and quality of introspection of subjects may play a role in the results.
+There are many approaches to determining cognitive load. The figure below, from \citet{brunken2003direct}, puts the different methods in a matrix based on their objectivity and causal relationship between measurements and cognitive load. Every end of this spectrum has it's benefits and downsides, for instance, subjective methods are a good way to measure the cognitive associated with any task by having the subject fill out a questionnaire. They are however self-reported measured, and thus subjective, which means that the honesty and quality of introspection of subjects may play a role in the results.
 
 On the other end, there are the objective measures, these generally require a more careful design of experiments. They benefit is that they are objective. In this thesis the indirect, objective method of \emph{physiological measures} is studied. 
 
@@ -177,6 +176,10 @@ Shi et al. found that GSR values increase when cognitive load levels increase ac
 
 In the follow-up research GSR and blink features were used for cognitive load classification \citep{Nourbakhsh2013}. Combining these two featuresets, around 75\% accuracy for binary classification, and 50\% accuracy for four-class classification was achieved. Only GSR features lead to accuracies of around 35\% and 66\% for binary and 4-class classification resepctively.
 
+Novel ways of measuring skin conductance are also studied. \citet{A6945148} used a conductive, flexible polymer foam material to create a sensor that measures the signals from the back of the user. This sensor was easily attached and detached from ordinary clothes, and a correlation to more ordinary GSR sensors (finger electrodes) proved to be high enough to show the feasibility of this new way of measuring GSR.
+
+%http://spectrum.library.concordia.ca/978540/
+
 \section{Research aim}
 The goal of this thesis is to investigate the possibility of determining what the cognitive load of a person is, given GSR measurements. An explorative experiment will be used with different tasks, each of which evokes a different level of cognitive load. From this data a classifier is built, which can classify which task the user was doing based on features derived from GSR, and thus say something about the cognitive load of a person.
 
@@ -213,8 +216,7 @@ Two galvanic skin response sensors were used in this experiment. The participant
                 \caption{Affectiva Q Sensor}
                 \label{fig:aff}
         \end{subfigure}%
-        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-          %(or a blank line to force the subfigure onto a new line)
+        ~ 
         \begin{subfigure}[b]{0.6\textwidth}
                 \includegraphics[width=\textwidth]{bioelec.jpg}
                 \caption{BIOPAC MP30 finger electrodes}
@@ -235,8 +237,6 @@ The sampling rate was set to 1000 samples per second.
 \subsection{Participants}
 Six participants took part in this experiment, five male and one female. Their age ranged between 19 and 25 at the time of the experiment. They were not compensated for their participation.
 
-
-\subsection{Task}
 
 \subsection{Experimental Design}
 The task consisted of 8 arithmetic tasks, with 4 difficulty levels. Two tasks of every difficulty level were completed by the participants, in a random order. 
@@ -382,28 +382,22 @@ A typical task is shown in figure 3.3a, this is a slice of the data in plotted i
         \begin{subfigure}[b]{0.7\textwidth}
                 \includegraphics[width=\textwidth]{measurements/singletaskunnormal.png}
                 \caption{unnormalized}
-                \label{fig:gull}
+                \label{fig:singleunnormal}
         \end{subfigure}%
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
           %(or a blank line to force the subfigure onto a new line)
         \begin{subfigure}[b]{0.7\textwidth}
                 \includegraphics[width=\textwidth]{measurements/singletaskfilt.png}
                 \caption{filtered and normalized}
-                \label{fig:tiger}
+                \label{fig:singlefiltered}
         \end{subfigure}
         \caption{Task 3 (difficulty 2) of subject 2}\label{fig:animals}
 \end{figure}
 
+In the appendix of this thesis there are some visualizations of characteristics of the processed gathered data.
+
 \pagebreak
 
-\section{Characteristics}
-
-\begin{figure}[H]
-  \centering
- 	\hspace*{-.25\textwidth}   
- 	\includegraphics[width=1.5\textwidth]{avggsr.eps}
-  \caption{Average GSR versus task difficulty.}
-\end{figure}
 
 
 
@@ -513,6 +507,38 @@ Also future research could include investigations of how classification accuracy
 
 There are benefits to using these consumer sensors. Generally, these sensors are much cheaper, allowing for more simoultaneous participants (which is especially useful in long-term measurements, for instance over the course of a week). Also, participants may already own these devices, and participating could be as simple as downloading an application from the \emph{App Store}.
  
+
+\appendix
+\chapter{Visualization of extracted features}
+
+
+\begin{figure}[H]
+  \centering
+ 	\hspace*{-.3\textwidth}   
+ 	\includegraphics[width=1.6\textwidth]{avggsr.eps}
+  \caption{Average GSR.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+ 	\hspace*{-.3\textwidth}   
+ 	\includegraphics[width=1.6\textwidth]{avggsr.eps}
+  \caption{Standard deviation.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+ 	\hspace*{-.3\textwidth}   
+ 	\includegraphics[width=1.6\textwidth]{decgsr.eps}
+  \caption{Decrease in GSR over task.}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+ 	\hspace*{-.3\textwidth}   
+ 	\includegraphics[width=1.6\textwidth]{peak.eps}
+  \caption{Peak count with various tresholds.}
+\end{figure}
 
 
 
