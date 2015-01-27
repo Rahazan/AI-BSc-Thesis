@@ -103,6 +103,8 @@ When processing information, we use working memory. The amount of memory used is
 
 It is built upon \emph{schema theory}, in which expertise in an area is a function of the acquisition of particular schemata \citep{bartlett1995remembering}. A schema is a mental structure to organise knowledge, \citep{mcvee2005schema} provides a more complete review of schema theory.
 
+\pagebreak
+
 Cognitive load theory is nearly always studied in the context of learning new schemata. A schema is one element in this working memory, no matter how large it is \citep{mayer2014cambridge}. The idea is that there are ways to reduce cognitive load by utilising long-term memory, and thus having more space in working memory, which would allow for more efficient learning.
 
 Cognitive load theory distinguishes three types of cognitive load, which according to research can each be reduced in specific ways \citep{mayer2002multimedia}:
@@ -130,16 +132,25 @@ Cognitive load measures, and more generally stress and arousal measures, are use
 
 \paragraph{Mental workload}
 
-<TODO uitleg wat mental workload & vs cognitive load>
+A universally agreed upon exact definition of mental workload is non-existent, and cognitive load and mental workload are sometimes even used interchangably. 
+
+Here mental workload refers to the amount of human information processing capacity needed for a task, whereas cognitive load refers to the amount of working memory required to perform a task.
 
 The interaction of mental workload and the three types of cognitive load has been studied by \citet{Galy2012269}. Increasing the cognitive load, for instance by increasing the difficulty of the task, was shown to have an additive interaction with mental workload.
 
-Knowing the cognitive load of a person can be used as an indicator for the mental workload of the person. Dynamically using this information to scale up or down the cognitive load of an application can be used to prevent mental overload, which can lead to accidents at work.
+Knowing the cognitive load of a person can be used as an indicator for the mental workload of the person. Dynamically using this information to scale up or down the cognitive load of an application can be used to prevent mental overload, which can lead to accidents at work. 
  
+This influencing of mental workload can also be used for training purposes, for instance in a game setting. 
+
+%ref naar CFEA / michel?
 
 \section{Determining cognitive load}
 
-There are many approaches to determining cognitive load. The figure below, from \citet{brunken2003direct}, puts the different methods in a matrix based on their objectivity and causal relationship between measurements and cognitive load. Every end of this spectrum has it's benefits and downsides, for instance, subjective methods are a good way to measure the cognitive associated with any task by having the subject fill out a questionnaire. They are however self-reported measured, and thus subjective, which means that the honesty and quality of introspection of subjects may play a role in the results.
+There are many approaches to determining cognitive load. The figure below, from \citet{brunken2003direct}, puts the different methods in a matrix based on their objectivity and causal relationship between measurements and cognitive load. Every end of this spectrum has it's benefits and downsides, for instance, subjective methods are a good way to measure the cognitive associated with any task by having the subject fill out a questionnaire. They are however self-reported measured, and thus subjective, which means that the honesty and quality of introspection of subjects may play a role in the results. 
+
+\pagebreak
+
+An example of a (post-event) subjective measurement method is the \emph{NASA Task Load Index (NASA-TLX)} \citep{hart1988development}. This is a questionnaire filled in by the subject after an event where the subject is asked about perceived workload.
 
 On the other end, there are the objective measures, these generally require a more careful design of experiments. The benefit is that they are objective, which means it is not subject to the issues associated with subjective measures described above. In this thesis the indirect, objective method of \emph{physiological measures} is studied. 
 
@@ -150,10 +161,10 @@ On the other end, there are the objective measures, these generally require a mo
 \end{figure}
 
 
-One of the main benefits of this approach is the objectivity and the possibility of using the cognitive load measurement dynamically, whereas with other objective measures the complete task has to be completed and the results of which analysed.
+One of the main benefits of this approach is the objectivity and the possibility of using the cognitive load measurement dynamically, whereas with other objective measures the complete task has to be completed and the results of which analyzed.
 Downsides of this approach are the possibility of noisy data, sensors may have slight defects and what one measures may be only partially influenced by the cognitive load of a person. Also, the participants have to wear sensors or one has to be in front of a sensor (such as a camera for eye blink rate measurement), which may impair movement. 
 
-Psychiological measures such as heart rate, blink rate, pupil dilation, skin conductance and more have been shown to have a correlation to cognitive load. In this thesis skin conductance was the biometric of choice. In the next section I will explain the rationale behind the decision.
+Psychiological measures such as heart rate \citep{hrn}, blink rate \citep{gowrisankaran2012asthenopia}, pupillary dilation \citep{klingner2008measuring}, skin conductance \citep{Nourbakhsh2012} have been shown to have a correlation to cognitive load. In this thesis skin conductance was the biometric of choice. In the next section I will explain the rationale behind the decision.
 
 
 \subsection{Galvanic Skin Response}
@@ -172,6 +183,7 @@ GSR can be measured in two ways, by measuring conductance (in siemens) or resist
 
 Above is a figure showing the typical skin conductance response to a discrete stimulus. Note the response onset, this onset can be up to 4 seconds from the stimulus onset \citep{dow_sc_explained_}. After the peak, an exponential decay is observed.
 
+\pagebreak
 
 \section{State of the art}
 Galvanic skin response readings have been studied in regard to cognitive load.
@@ -188,6 +200,7 @@ In the follow-up research GSR and blink features were used for cognitive load cl
 
 Novel ways of measuring skin conductance are also studied. \citet{A6945148} used a conductive, flexible polymer foam material to create a sensor that measures the signals from the back of the user. This sensor was easily attached and detached from ordinary clothes, and a correlation to more ordinary GSR sensors (finger electrodes) proved to be high enough to show the feasibility of this new way of measuring GSR.
 
+\pagebreak
 
 \section{Research aim}
 The goal of this thesis is to investigate the possibility of determining what the cognitive load of a person is, given GSR measurements. An explorative experiment will be used with different tasks, each of which evokes a different level of cognitive load. From this data a classifier is built, which can classify which task the user was doing based on features derived from GSR, and thus say something about the cognitive load of a person.
@@ -195,7 +208,7 @@ The goal of this thesis is to investigate the possibility of determining what th
 The research question reads:
 
 \begin{center}
-Can cognitive load be classified from galvanic skin response measurements?
+Can induced cognitive load be classified from galvanic skin response measurements?
 \end{center}
 
 
@@ -262,6 +275,8 @@ A single task consisted of adding up four numbers, and selecting an answer answe
 \subsection{Procedure}
 The participants were first explained the task and seated in front of the laptop. Then the sensors were applied to the left hand and wrist. The participant was then instructed to place the left hand on the table in front of him/her and not to move it, in order to prevent possible motion artifacts which have been shown to influence GSR readings \citep{motionart}.
 
+\pagebreak
+
 \section{Analysis}
 
 \subsection{Affectiva Q Sensor Data}
@@ -290,6 +305,8 @@ AverageGSR(s) = \frac
 
 With $s$ a given subject, $Q_s$ a set of all tasks performed by $s$, and $T_q$ the set of all measurements in task $q$, and $GSR(s,q,t)$ be the GSR datapoint of subject s, task q at time t.
 
+\pagebreak
+
 The normalised GSR is then given by:
 
 \[
@@ -297,6 +314,8 @@ NormGSR(s,q,t) = \frac{GSR(s,q,t)}{AverageGSR(s)}
 \]
 
 Note that the normalization is done by dividing by the average of the subject over all tasks, and not by simply transforming all measurements to be between 0 and 1. What (original) GSR value would become 1 and 0 would then be quite arbitrary per subject, and not all subjects would be on the same scale, as outliers can totally influence this range.
+
+
 
 This normalised GSR was then cut into the specific tasks.
 
@@ -486,7 +505,7 @@ These confusion matrices visualize the performance of the classification algorit
 
 \chapter{Discussion}
 
-To rehash, the research question reads \emph{Can cognitive load be classified from galvanic skin response measurements?}. In this section I will attempt to answer this question with the results from this experiment.
+To rehash, the research question of this thesis reads \emph{Can induced cognitive load be classified from galvanic skin response measurements?}. In this section I will attempt to answer this question with the results from this experiment.
 
 \section{Interpretation}
 
@@ -512,6 +531,8 @@ With 6 subjects and 8 tasks per subject, the total dataset consisted of 48 entri
 
 \subsubsection{Task cognitive load manipulation}
 Despite \citet{Nourbakhsh2013} showing that the tasks effectively manipulate the cognitive load of the subject, this was concluded from subjective reports and response times. It may be that these response times were manipulated by something other than cognitive load, and that the tasks do not evoke a difference in cognitive load in the subject. This could be the case between all difficulties, or between some. It may also be that this difference in cognitive load is very small, making classification harder, especially with more than two classes.
+
+\pagebreak
 
 \subsubsection{Time domain features}
 All extracted features were solely features from the time domain, however frequency domain features were shown by \citep{Nourbakhsh2012} to significantly correlate with the task difficulty as well. Adding frequency domain features to the featureset, may improve classification rates.
