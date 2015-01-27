@@ -86,13 +86,13 @@ Guido \textsc{Zuidhof} % Your name
 
 
 \begin{abstract}
-When performing a task, a certain amount of working memory is used. The amount of information a human is trying to process in working memory at any time is known as the cognitive load of a person. Biometrics can be used to determine this load. In this thesis galvanic skin response measurements were used to classify the cognitive load of a person. To study this, a pilot experiment was conducted where every participant performed four tasks with varying difficulty levels, each of which associated with a certain cognitive load level. An average 4-class classification accuracy of roughly 35\%, and an average 2-class classification accuracy of around 62\% was achieved.
+When performing a task, a certain amount of working memory is used. The amount of information a human is trying to process in working memory at any time is known as cognitive load. Biometrics can be used to determine this load. In this thesis galvanic skin response measurements were used to classify the cognitive load of a person. To study this, a pilot experiment was conducted in which every participant performed four tasks with varying difficulty levels, each associated with a certain cognitive load level. An average 4-class classification accuracy of roughly 35\%, and an average 2-class classification accuracy of around 62\% was achieved.
 
 \end{abstract}
 
 
 \chapter{Introduction}
-When performing a task, a certain amount of working memory is used. The amount of information a human is trying to process in working memory at any time is known as the cognitive load of a person. 
+When performing a task, a certain amount of working memory is used. The amount of information a human is trying to process in working memory at any time is known as the cognitive load of a person \citep{Oviatt2004}. 
 
 With the increasing capabilities of biometric measurement in smartwatches and smartphones it is exciting to see whether these biometric measures can be used to determine the cognitive load of a person. This could allow for dynamic adaptation of an application to best fit the mental state of the user.
 
@@ -101,7 +101,7 @@ This introduction starts with a brief overview of cognitive load theory, followe
 \section{Cognitive load}
 When processing information, we use working memory. The amount of memory used is not the same for every task. \emph{Cognitive load theory} \citep{Oviatt2004} revolves around the idea that (short-term) working memory is limited, whereas long-term memory is unlimited. 
 
-It is built upon \emph{schema theory}, in which expertise in an area is a function of the acquisition of particular schemata \citep{bartlett1995remembering}. A schema is a mental structure to organise knowledge, \citep{mcvee2005schema} provides a more complete review of schema theory.
+It is built upon \emph{schema theory}, in which expertise in an area is a function of the acquisition of particular schemata \citep{bartlett1995remembering}. A schema is a mental structure to organise single unit of knowledge. \citep{mcvee2005schema} provides a more complete review of schema theory.
 
 \pagebreak
 
@@ -111,19 +111,21 @@ Cognitive load theory distinguishes three types of cognitive load, which accordi
 
 
 \paragraph{Extraneous cognitive load}
-This cognitive load is influenced by how the material or task is presented. It can be reduced by using worked-out examples, using diagrams, or presenting the material in multiple modalities \citep{mousavi1995reducing}.
+Influenced by how the material or task is presented. It can be reduced by using worked-out examples, using diagrams, or presenting the material in multiple modalities \citep{mousavi1995reducing}.
 
 \paragraph{Intrinsic cognitive load}
-This cognitive load is determined by the complexity of the material at hand. It can be reduced by splitting up the task or building upon former (informal) knowledge.
+Determined by the complexity of the material at hand. It can be reduced by splitting up the task or building upon former (informal) knowledge.
 
 \paragraph{Germane cognitive load}
-Germane cognitive load is the cognitive load associated with the process of building, acquiring and automating new schemas. The greater the space in working memory for this load (by reducing the intrinsic and extraneous cognitive load), the greater the ease of learning.
+The cognitive load associated with the process of building, acquiring and automating new schemas. The greater the space in working memory for this load (by reducing the intrinsic and extraneous cognitive load), the greater the ease of learning.
 
 \section{Applications}
 There are many application areas where knowing the cognitive load of a person yields valuable information. Here I will highlight three:
 
 \paragraph{Learning}
 Most applications and research regarding cognitive load theory is applied in the context of multimedia learning \citep{brunken2003direct}. The goal in this domain is to find the way to structure and present information to ease learning the most. In other words, to reduce the intrinsic and extraneous cognitive load as much as possible, so that more working memory is left for germane cognitive load. Generally speaking, presenting information in more modalities in multimedia learning tasks decreases the intrinsic and extraneous cognitive load of the task. An example is the use of figures and graphs to visualize information explained in text.
+
+\pagebreak
 
 \paragraph{Usability testing}
 Cognitive load measures, and more generally stress and arousal measures, are used by human computer interaction (HCI) developers and researchers to evaluate the usability of software or systems \citep{Jacob2003} \citep{Schmutz2009}.
@@ -138,7 +140,7 @@ Here mental workload refers to the amount of human information processing capaci
 
 The interaction of mental workload and the three types of cognitive load has been studied by \citet{Galy2012269}. Increasing the cognitive load, for instance by increasing the difficulty of the task, was shown to have an additive interaction with mental workload.
 
-Knowing the cognitive load of a person can be used as an indicator for the mental workload of the person. Dynamically using this information to scale up or down the cognitive load of an application can be used to prevent mental overload, which can lead to accidents at work. 
+It is known that the cognitive load of a person can be used as an indicator for the mental workload of the person. Dynamically using this information to scale up or down the cognitive load of an application can be used to prevent mental overload, which can lead to accidents at work. 
  
 This influencing of mental workload can also be used for training purposes, for instance in a game setting. 
 
@@ -146,7 +148,7 @@ This influencing of mental workload can also be used for training purposes, for 
 
 \section{Determining cognitive load}
 
-There are many approaches to determining cognitive load. The figure below, from \citet{brunken2003direct}, puts the different methods in a matrix based on their objectivity and causal relationship between measurements and cognitive load. Every end of this spectrum has it's benefits and downsides, for instance, subjective methods are a good way to measure the cognitive associated with any task by having the subject fill out a questionnaire. They are however self-reported measured, and thus subjective, which means that the honesty and quality of introspection of subjects may play a role in the results. 
+There are many approaches to determining cognitive load. The figure below, from \citet{brunken2003direct}, puts the different methods in a matrix based on their objectivity and causal relationship between measurements and cognitive load. Every end of this spectrum has it's benefits and downsides, for instance, subjective methods are a good way to measure the cognitive load associated with any task by having the subject fill out a questionnaire. They are however self-reported measures and thus subjective, which means that the honesty and quality of introspection of subjects may play a role in the results. 
 
 \pagebreak
 
@@ -161,17 +163,17 @@ On the other end, there are the objective measures, these generally require a mo
 \end{figure}
 
 
-One of the main benefits of this approach is the objectivity and the possibility of using the cognitive load measurement dynamically, whereas with other objective measures the complete task has to be completed and the results of which analyzed.
-Downsides of this approach are the possibility of noisy data, sensors may have slight defects and what one measures may be only partially influenced by the cognitive load of a person. Also, the participants have to wear sensors or one has to be in front of a sensor (such as a camera for eye blink rate measurement), which may impair movement. 
+One of the main benefits of this approach is the objectivity and the possibility of using the cognitive load measurement dynamically, whereas with other objective measures the task has to be completed and the results analyzed.
+Downsides of this approach are the possibility of noisy data, sensors may have slight defects and what one measures may be only partially influenced by the cognitive load of a person. Also, the participants have to wear sensors or one has to be in front of a sensor (such as a camera for eye blink rate measurement), which may restrict movement. 
 
-Psychiological measures such as heart rate \citep{hrn}, blink rate \citep{gowrisankaran2012asthenopia}, pupillary dilation \citep{klingner2008measuring}, skin conductance \citep{Nourbakhsh2012} have been shown to have a correlation to cognitive load. In this thesis skin conductance was the biometric of choice. In the next section I will explain the rationale behind the decision.
+Psychiological measures such as heart rate \citep{hrn}, blink rate \citep{gowrisankaran2012asthenopia}, pupillary dilation \citep{klingner2008measuring}, skin conductance \citep{Nourbakhsh2012} have been shown to correlate with cognitive load. In this thesis skin conductance was the biometric of choice. In the next section I will explain the rationale behind the decision.
 
 
 \subsection{Galvanic Skin Response}
 
-Galvanic Skin Response (GSR) is an interesting physiological response to measure as sensors are cheap and simple. Also, the subject is not or marginally restricted in movement, this allows for long-term measurement (all day), if need be outside of the lab. To this end GSR is the biometric of choice in this explorative study.
+Galvanic Skin Response (GSR) is an interesting physiological response to measure as sensors are cheap and simple. Also, the subject is not or marginally restricted in movement, allowing for long-term measurement (all day). To this end GSR is the biometric of choice in this explorative study.
 
-Because of these features mobile GSR measurement systems, for instance around the foot \citep{Gravenhorst} are being developed to measure (patients) throughout the day. Also, new devices such as smartwatches are fitted with GSR electrodes increasingly often, which means findings could be applied there. An example would be using GSR data measured by a smart watch to dynamically change an application's presentation of information.
+Because of these features mobile GSR measurement systems, for instance around the foot \citep{Gravenhorst} are being developed to measure (patients) throughout the day. Also, new devices such as smartwatches are fitted with GSR electrodes increasingly often, which means findings could be applied there. An example would be using GSR data measured by a smart watch to dynamically change an application's presentation of information. For instance, more or less details displayed on the screen depending on the GSR signal.
 
 GSR can be measured in two ways, by measuring conductance (in siemens) or resistance (in ohms). Measuring skin conductance \textit{"bears a simpler more linear relationship to the underlying processes of psychological interest than its repriprocal, SR [skin resistance]"} \citep{lykken1971direct}, therefore any GSR measurement in this thesis is done by measuring skin conductance.
 
@@ -186,17 +188,17 @@ Above is a figure showing the typical skin conductance response to a discrete st
 \pagebreak
 
 \section{State of the art}
-Galvanic skin response readings have been studied in regard to cognitive load.
+Galvanic skin response readings have been studied with regard to cognitive load.
 
 \citet{Shi2007} investigated the possibility of using GSR as an index of cognitive load during the use of unimodal and multimodal versions of the same interface. It has been shown that multimodal interfaces \textit{"support the user in managing cognitive load"} \citep{Oviatt2004}, and thus multimodal interfaces have a lower corresponding cognitive load. 
 
-Shi et al. found that GSR values increase when cognitive load levels increase across all subjects, and conclude that GSR can be used to "serve as an objective indicator of [a] user's cognitive load".
+Shi et al. found that GSR values increase when cognitive load levels increase across all subjects, and conclude that GSR can "serve as an objective indicator of [a] user's cognitive load".
 
 \citet{Nourbakhsh2012} showed that both time and frequency domain features from GSR data significantly correlate with the cognitive load of a person.
 
 In the follow-up research GSR and blink features were used for cognitive load classification \citep{Nourbakhsh2013}. Combining these two featuresets, around 75\% accuracy for binary classification, and 50\% accuracy for four-class classification was achieved. Only GSR features lead to accuracies of around 66\% and 35\% for binary and 4-class classification resepctively.
 
-\citet{library978540} analyzed the mental stress and workload using both galvanic skin response and heart rate variability. The aim was to find the correlation between mental stress and design activities. These activities included designing various objects, such as a house that can easily fly to another place. The results showed that the mean GSR levels were significantly higher during the task compared to the task, and the post-test resting state GSR was also significantly higher than the pre-test resting state level.
+\citet{library978540} analyzed the mental stress and workload using both galvanic skin response and heart rate variability. The aim was to find the correlation between mental stress and design activities. These activities included designing various objects, such as a house that can easily fly to another place. The results showed that the mean GSR levels were significantly higher during the task compared to the resting state, and the post-test resting state GSR was also significantly higher than the pre-test resting state level.
 
 Novel ways of measuring skin conductance are also studied. \citet{A6945148} used a conductive, flexible polymer foam material to create a sensor that measures the signals from the back of the user. This sensor was easily attached and detached from ordinary clothes, and a correlation to more ordinary GSR sensors (finger electrodes) proved to be high enough to show the feasibility of this new way of measuring GSR.
 
@@ -213,7 +215,7 @@ Can induced cognitive load be classified from galvanic skin response measurement
 
 
 \subsection{Organization of this thesis}
-In the next chapter I will explain the method with which this research question is answered. Then, in chapter three, the results are presented, of which the implications are discussed in the final chapter.
+In the next chapter I will explain the method with which this research question is answered. Then, in chapter three, the results will be presented, and their implications discussed in the final chapter.
 
 \chapter{Method}
 
@@ -224,11 +226,11 @@ There are four difficulty levels of this task. Difficulty level one involves add
 
 The subject is first shown an amount of stars corresponding to the difficulty level for 8 seconds, after which the numbers are shown one by one for 4 seconds. Three answers are then presented on the screen, of which one is correct. The subject subsequently selects the correct answer using a standard computer mouse. There was no time limit for selecting an answer.
 
-In \citep{Nourbakhsh2013} these tasks were shown to have significant difference in subjective ratings of task difficulty levels, as well as a siginificant difference in response time of different task levels. From which is shown that these designed tasks manipulate cognitive load effectively.
+In \citet{Nourbakhsh2013} these tasks were shown to have significant difference in subjective ratings of task difficulty levels, as well as a siginificant difference in response time of different task levels. This implies that these designed tasks manipulate cognitive load effectively.
 
 
 \subsection{Apparatus}
-The task was displayed in a 15.6" laptop screen, input was given using a standard computer mouse.
+The task was displayed on a 15.6" laptop screen, and input was given using a standard computer mouse.
 Two galvanic skin response sensors were used in this experiment. The participants wore both sensors at the same time on the left arm. Below, the two sensors are briefly discussed.
 
 \begin{figure}[H]
@@ -263,7 +265,7 @@ Six participants took part in this experiment, five male and one female. Their a
 \subsection{Experimental Design}
 The task consisted of 8 arithmetic tasks, with 4 difficulty levels. Two tasks of every difficulty level were completed by the participants, in a random order. 
 
-A single task consisted of adding up four numbers, and selecting an answer answer from three options. The numbers to add were shown one by one, for four seconds. Before a task starts, a number of stars is shown equal to the difficulty level, for eight seconds. The tasks followed each other without breaks. There was no time limit for selecting the answer, there was no feedback whether the selected answer was correct.
+A single task consisted of adding up four numbers, and selecting an answer from three options. The numbers were shown one by one, for four seconds. Before a task started, a number of stars was shown equal to the difficulty level, for eight seconds. The tasks followed each other without breaks. There was no time limit for selecting the answer and there was no feedback whether the selected answer was correct.
 
 \begin{figure}[H]
   \centering
@@ -273,7 +275,7 @@ A single task consisted of adding up four numbers, and selecting an answer answe
 \end{figure}
 
 \subsection{Procedure}
-The participants were first explained the task and seated in front of the laptop. Then the sensors were applied to the left hand and wrist. The participant was then instructed to place the left hand on the table in front of him/her and not to move it, in order to prevent possible motion artifacts which have been shown to influence GSR readings \citep{motionart}.
+The participants were seated in front of a laptop and the experimenter explained the task. Then the sensors were applied to the left hand and wrist. The participant was then instructed to place the left hand on the table in front of him/her and not to move it, in order to prevent possible motion artifacts which have earlier been shown to influence GSR readings \citep{motionart}.
 
 \pagebreak
 
@@ -282,7 +284,7 @@ The participants were first explained the task and seated in front of the laptop
 \subsection{Affectiva Q Sensor Data}
 The data gathered from the Affectiva Q Sensor proved to be unusable. In most participants no proper skin contact seemed to have been made during the full experiment. Dry GSR sensors need some sweat to ensure a good connection with both electrodes. Given the short experiment duration (a few minutes) this connection was possibly never established.
 
-In hindsight the participants could have worn the device longer before the first task started, or they could have been asked to perform some light exercise. 
+%In hindsight the participants could have worn the device longer before the first task started, or they could have been asked to perform some light exercise. 
 
 Therefore, any data discussed from here on is solely that which has been collected using the BIOPAC MP30 and it's finger electrodes.
 
@@ -377,7 +379,7 @@ with $k \in \{1,2,3,4\}$.
 
 \subsection{Data mining}
 
-These extracted features are then fed into \emph{Weka 3} \citep{weka}, which is data mining software in Java. 
+The extracted features were then fed into \emph{Weka 3} \citep{weka}, which is data mining software in Java. 
 
 
 Three of the most commonly used classification algorithms were used \citep{small}. Namely a Bayesian classification algorithm (\emph{Na\"iveBayes}, which is an implementation based on \citep{john1995estimating}), a support vector machine (SVM) classification algorithm (\emph{LibSVM}) \citep{libsvm}, with SVM model type C-SVC and a radial basis kernel type, and a neural network classifier (\emph{MultilayerPerceptron}, with 8 hidden layers). 
@@ -407,7 +409,7 @@ Below in figure 3.1 the raw data is shown from one of the subject over the cours
   \caption{Data from a single participant after Savitzky-Golay filter.}
 \end{figure}
 
-A typical task is shown in figure 3.3a, this is a slice of the data in plotted in figure 3.2. In 3.3b this data has been normalized as described in the previous chapter, as well as filtered using a Savitzky-Golay filter to smooth over any remaining noise.
+A typical task's data is shown in figure 3.3a, this is a slice of the data plotted in figure 3.2. In 3.3b this data has been normalized as described in the previous chapter, as well as filtered using a Savitzky-Golay filter to smooth over any remaining noise.
 
 % Single task figure
 
@@ -428,7 +430,7 @@ A typical task is shown in figure 3.3a, this is a slice of the data in plotted i
         \caption{Task 3 (difficulty 2) of subject 2}\label{fig:animals}
 \end{figure}
 
-In the appendix of this thesis there are some visualizations of characteristics of the processed gathered data.
+In the appendix of this thesis there are several visualizations of characteristics of the processed gathered data.
 
 \pagebreak
 
@@ -505,16 +507,16 @@ These confusion matrices visualize the performance of the classification algorit
 
 \chapter{Discussion}
 
-To rehash, the research question of this thesis reads \emph{Can induced cognitive load be classified from galvanic skin response measurements?}. In this section I will attempt to answer this question with the results from this experiment.
+To rehash, the research question of this thesis reads \emph{Can induced cognitive load be classified from galvanic skin response measurements?}. In this section I will discuss this question with the results from this experiment.
 
 \section{Interpretation}
 
-The results show that the classification accuracy of the classifiers is better than chance dictates for two out of three used classification algorithms, however not much. In the binary classification task the results were more reasonable, where every classifier performs better than chance.
-These classification rates are slightly lower than those reported by \citet{Nourbakhsh2013} in a similar experiment, this may be due to the smaller dataset.
+The results show that the classification accuracy of the classifiers is better than chance dictates for two out of three used classification algorithms, however not much. The binary classification results were more accurate, where every classifier performs better than chance.
+These classification rates are slightly lower than those reported by \citet{Nourbakhsh2013} in a similar experiment, which may be due to the smaller dataset.
 
 When considering the confusion matrices of the 4-class classification it can be noted that the task most often classified as having a wrong difficulty level was task 1, which was more often classified as difficulty 2 and 3 than 1. In fact, it has only been classified correct once out of twelve entries in the NaiveBayes and LibSVM model, and a mere three times in the MultilayerPerceptron model. Perhaps this task was too easy and caused participants to become distracted.
 
-There are many possible explanations why this classification accuracy is not greater than it is. The first explanation is that from just GSR data, it simply can not be predicted any better. Next I will highlight some other possible reasons:
+There are many possible explanations why this classification accuracy is not greater. The first explanation is that from just GSR data, it simply can not be classified any better. Next I will highlight some other possible reasons:
 
 \subsubsection{Loss of information from filter}
 Filtering the data, to remove the DC current noise, lead to some data loss. A Savitzky-Golay filter smooths peaks slightly, which may have influenced the classification rate.
@@ -541,7 +543,7 @@ All extracted features were solely features from the time domain, however freque
 Future research could be measuring GSR data using longer, carefully designed tasks, of which the cognitive load can be determined using an established cognitive load index.
 Also future research could include investigations of how classification accuracy changes when using data measured by more portable (consumer) sensors, whose measurements are likely of lesser quality than the used lab equipment in this experiment. 
 
-There are benefits to using these consumer sensors. Generally, these sensors are much cheaper, allowing for more simultaneous participants (which is especially useful in long-term measurements, for instance over the course of a week). This can promote the ecological validity of the test, as these sensors can be worn during real world activities. Also, participants may already own these devices, and participating could be as simple as downloading an application from the \emph{App Store}.
+There are benefits to using consumer sensors. Generally, these sensors are much cheaper, allowing for more simultaneous participants (which is especially useful in long-term measurements, for instance over the course of a week). This can promote the ecological validity of the test, as these sensors can be worn during real world activities. Also, participants may already own these devices, and participating could be as simple as downloading an application from the \emph{App Store}.
  
 
 \appendix
